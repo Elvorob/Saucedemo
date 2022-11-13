@@ -1,3 +1,4 @@
+from selenium.webdriver.common.by import By
 from .base_page import BasePage
 from .locators import LoginPageLocators
 
@@ -15,12 +16,10 @@ class LoginPage(BasePage):
         assert self.driver.find_element(*LoginPageLocators.LOGIN_BTN)
 
     ################################################################
-    def signin_4_username(self, driver, login, password):
-        username_input = driver.find_element(*LoginPageLocators.USERNAME_INPUT)
-        username_input.send_keys(login)
-        password_input = driver.find_element(*LoginPageLocators.PASSWORD_INPUT)
-        password_input.send_keys(password)
-        driver.find_element(*LoginPageLocators.LOGIN_BTN).click()
+    def signin_4_username(self, username, password):
+        self.driver.find_element(By.ID, "user-name").send_keys(username)
+        self.driver.find_element(By.ID, "password").send_keys(password)
+        self.driver.find_element(By.ID, "login-button").click()
 
     ################################################################
     def signin_standart_user(self, login="login", password="password"):
@@ -59,5 +58,3 @@ class LoginPage(BasePage):
         self.driver.find_element(*LoginPageLocators.USERNAME_INPUT).send_keys(*LoginPageLocators.USER_NAME)
         self.driver.find_element(*LoginPageLocators.PASSWORD_INPUT).send_keys(*LoginPageLocators.PASSWORD)
         self.driver.find_element(*LoginPageLocators.LOGIN_BTN).click()
-
-
