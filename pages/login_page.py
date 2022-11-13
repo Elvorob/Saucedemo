@@ -44,8 +44,7 @@ class LoginPage(BasePage):
         assert value == "Epic sadface: Sorry, this user has been locked out."
 
     def signin_empty_login_valid_password(self, password="password"):
-        username_input = self.driver.find_element(*LoginPageLocators.USERNAME_INPUT)
-        username_input.clear()
+       self.driver.find_element(*LoginPageLocators.USERNAME_INPUT).clear()
         password_input = self.driver.find_element(*LoginPageLocators.PASSWORD_INPUT)
         password_input.send_keys(password)
         self.driver.find_element(*LoginPageLocators.LOGIN_BTN).click()
