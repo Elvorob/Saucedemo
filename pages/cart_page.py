@@ -2,6 +2,8 @@ from .locators import *
 from .base_page import *
 
 
+
+
 class CartPage(BasePage):
     def backpack_can_be_removed(self):
         self.driver.find_element(*CartPageLocators.REMOVE_ITEM_BTN).click()
