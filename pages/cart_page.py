@@ -1,7 +1,7 @@
 from .locators import *
 from .base_page import *
 
-
+#тест конфликта дубль два
 
 
 class CartPage(BasePage):
