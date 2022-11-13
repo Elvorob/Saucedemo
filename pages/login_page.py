@@ -23,20 +23,16 @@ class LoginPage(BasePage):
 
     ################################################################
     def signin_standart_user(self, login="login", password="password"):
-        username_input = self.driver.find_element(*LoginPageLocators.USERNAME_INPUT)
-        username_input.send_keys(login)
-        password_input = self.driver.find_element(*LoginPageLocators.PASSWORD_INPUT)
-        password_input.send_keys(password)
+        self.driver.find_element(*LoginPageLocators.USERNAME_INPUT).send_keys(login)
+        self.driver.find_element(*LoginPageLocators.PASSWORD_INPUT).send_keys(password)
         self.driver.find_element(*LoginPageLocators.LOGIN_BTN).click()
 
     def should_go_on_product_page(self):
         assert "inventory" in self.driver.current_url
 
     def signin_locked_out_user(self, login="login", password="password"):
-        username_input = self.driver.find_element(*LoginPageLocators.USERNAME_INPUT)
-        username_input.send_keys(login)
-        password_input = self.driver.find_element(*LoginPageLocators.PASSWORD_INPUT)
-        password_input.send_keys(password)
+        self.driver.find_element(*LoginPageLocators.USERNAME_INPUT).send_keys(login)
+        self.driver.find_element(*LoginPageLocators.PASSWORD_INPUT).send_keys(password)
         self.driver.find_element(*LoginPageLocators.LOGIN_BTN).click()
         # self.driver.implicitly_wait(2)
         message = self.driver.find_element(*LoginPageLocators.MESSAGE_EPIC_SADFACE)
