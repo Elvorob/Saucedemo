@@ -4,12 +4,12 @@ from .locators import *
 
 class BasePage():
 
-    def __init__(self, driver, link):
-        self.driver = driver
+    def __init__(self, d, link):
+        self.d = d
         self.link = link
 
     def open_page(self):
-        self.driver.get(self.link)
+        self.d.get(self.link)
 
     def element_is_present(self, method, locator):
         try:

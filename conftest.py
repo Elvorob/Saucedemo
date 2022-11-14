@@ -7,6 +7,7 @@ from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.core.utils import ChromeType
 
+
 # @pytest.fixture(scope='function')
 # def driver():
 #     o = webdriver.ChromeOptions()
