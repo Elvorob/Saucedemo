@@ -4,16 +4,16 @@ from .locators import *
 
 class BasePage():
 
-    def __init__(self, driver, link):
-        self.driver = driver
+    def __init__(self, d, link):
+        self.d = d
         self.link = link
 
     def open_page(self):
-        self.driver.get(self.link)
+        self.d.get(self.link)
 
     def element_is_present(self, method, locator):
         try:
-            self.driver.find_element(method, locator)
+            self.d.find_element(method, locator)
         except NoSuchElementException:
             return False
         return True
@@ -23,7 +23,7 @@ class BasePage():
 
     def element_is_NOT_present(self, method, locator):
         try:
-            self.driver.find_element(method, locator)
+            self.d.find_element(method, locator)
         except NoSuchElementException:
             return True
         return False
