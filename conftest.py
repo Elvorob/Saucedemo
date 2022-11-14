@@ -7,23 +7,24 @@ from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.core.utils import ChromeType
 
-@pytest.fixture(scope='function')
-def driver():
-    o = webdriver.ChromeOptions()
-    o.headless = False
-    print('\nstart browser...')
-    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=o)
-    yield driver
-    print('\nquit browser...')
-    driver.quit()
+
+# @pytest.fixture(scope='function')
+# def driver():
+#     o = webdriver.ChromeOptions()
+#     o.headless = False
+#     print('\nstart browser...')
+#     driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=o)
+#     yield driver
+#     print('\nquit browser...')
+#     driver.quit()
 
 @pytest.fixture(scope="function")
-def correct_login(driver):
-    driver.get("https://www.saucedemo.com/")
-    driver.find_element(*LoginPageLocators.USERNAME_INPUT).send_keys(LoginPageLocators.USER_NAME)
-    driver.find_element(*LoginPageLocators.PASSWORD_INPUT).send_keys(LoginPageLocators.PASSWORD)
-    driver.find_element(*LoginPageLocators.LOGIN_BTN).click()
-    assert driver.current_url == "https://www.saucedemo.com/inventory.html", "____YOU NOT ENTER______"
+def correct_login(d):
+    d.get("https://www.saucedemo.com/")
+    d.find_element(*LoginPageLocators.USERNAME_INPUT).send_keys(LoginPageLocators.USER_NAME)
+    d.find_element(*LoginPageLocators.PASSWORD_INPUT).send_keys(LoginPageLocators.PASSWORD)
+    d.find_element(*LoginPageLocators.LOGIN_BTN).click()
+    assert d.current_url == "https://www.saucedemo.com/inventory.html", "____YOU NOT ENTER______"
 
 @pytest.fixture(scope="class")
 def d(browser):
