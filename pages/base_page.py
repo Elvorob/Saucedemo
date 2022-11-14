@@ -13,7 +13,7 @@ class BasePage():
 
     def element_is_present(self, method, locator):
         try:
-            self.driver.find_element(method, locator)
+            self.d.find_element(method, locator)
         except NoSuchElementException:
             return False
         return True
@@ -23,7 +23,7 @@ class BasePage():
 
     def element_is_NOT_present(self, method, locator):
         try:
-            self.driver.find_element(method, locator)
+            self.d.find_element(method, locator)
         except NoSuchElementException:
             return True
         return False
