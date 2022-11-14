@@ -33,10 +33,8 @@ class LoginPage(BasePage):
         assert "inventory" in self.driver.current_url
 
     def signin_locked_out_user(self, login="login", password="password"):
-        username_input = self.driver.find_element(*LoginPageLocators.USERNAME_INPUT)
-        username_input.send_keys(login)
-        password_input = self.driver.find_element(*LoginPageLocators.PASSWORD_INPUT)
-        password_input.send_keys(password)
+        self.driver.find_element(*LoginPageLocators.USERNAME_INPUT).send_keys(login)
+        self.driver.find_element(*LoginPageLocators.PASSWORD_INPUT).send_keys(password)
         self.driver.find_element(*LoginPageLocators.LOGIN_BTN).click()
         # self.driver.implicitly_wait(2)
         message = self.driver.find_element(*LoginPageLocators.MESSAGE_EPIC_SADFACE)
@@ -44,10 +42,8 @@ class LoginPage(BasePage):
         assert value == "Epic sadface: Sorry, this user has been locked out."
 
     def signin_empty_login_valid_password(self, password="password"):
-        username_input = self.driver.find_element(*LoginPageLocators.USERNAME_INPUT)
-        username_input.clear()
-        password_input = self.driver.find_element(*LoginPageLocators.PASSWORD_INPUT)
-        password_input.send_keys(password)
+        self.driver.find_element(*LoginPageLocators.USERNAME_INPUT).clear()
+        self.driver.find_element(*LoginPageLocators.PASSWORD_INPUT).send_keys(password)
         self.driver.find_element(*LoginPageLocators.LOGIN_BTN).click()
         message = self.driver.find_element(*LoginPageLocators.MESSAGE_EPIC_SADFACE)
         value = message.text
