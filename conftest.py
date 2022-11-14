@@ -8,16 +8,6 @@ from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.core.utils import ChromeType
 
 
-# @pytest.fixture(scope='function')
-# def driver():
-#     o = webdriver.ChromeOptions()
-#     o.headless = False
-#     print('\nstart browser...')
-#     driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=o)
-#     yield driver
-#     print('\nquit browser...')
-#     driver.quit()
-
 @pytest.fixture(scope="function")
 def correct_login(d):
     d.get("https://www.saucedemo.com/")
