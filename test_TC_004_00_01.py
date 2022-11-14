@@ -1,4 +1,4 @@
-from pages.locators import *
+from .pages.locators import *
 
 
 def test_open_cart(d, correct_login):
