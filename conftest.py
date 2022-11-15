@@ -55,3 +55,8 @@ def g(d):
     yield d
     d.quit()
     print("\n***** end fixture = teardown *****\n")
+
+#--------- указывать другое имя для отчетов.
+#--------- По умолчанию название report.html
+# def pytest_html_report_title(report):
+#     report.title = "Blablabla"
