@@ -4,6 +4,7 @@ link = "https://www.saucedemo.com/"
 
 
 class InventoryPageLocators():
+    CART_BADGE = (By.CSS_SELECTOR, ".shopping_cart_badge")
     APPER_LOGO = (By.XPATH, "//div[@id='root']//div[@class='app_logo']")
     CART_BTN = (By.ID, "shopping_cart_container")
     PRODUCTS_TITLE = (By.XPATH, '//div[@id="header_container"]//span[@class="title"]')
