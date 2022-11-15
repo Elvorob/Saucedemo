@@ -4,7 +4,7 @@ from .pages.inventory_page import InventoryPage
 from .pages.locators import link
 
 
-def test_add_item_in_the_cart(d):
+def test_remove_item_from_the_cart(d):
     page = LoginPage(d, link)
     page.open_page()
     time.sleep(2)
@@ -17,4 +17,4 @@ def test_add_item_in_the_cart(d):
     time.sleep(2)
     page.item_added_to_cart()
     page.remove_backpack_from_cart()
-
+    page.no_item_in_cart()

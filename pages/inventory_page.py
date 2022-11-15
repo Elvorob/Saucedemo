@@ -29,3 +29,6 @@ class InventoryPage(BasePage):
         assert self.element_is_NOT_present(*InventoryPageLocators.CART_BADGE)
         assert self.element_is_NOT_present(*InventoryPageLocators.BACKPACK_REMOVE_BTN)
 
+    def remove_backpack_from_cart(self):
+        self.d.find_element(*InventoryPageLocators.BACKPACK_REMOVE_BTN).click()
+
