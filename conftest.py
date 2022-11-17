@@ -33,7 +33,7 @@ def d(browser):
         )
     else:
         o = webdriver.ChromeOptions()
-        o.headless = False
+        o.headless = True
         driver = webdriver.Chrome(
             service=ChromeService(
                 ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install()
