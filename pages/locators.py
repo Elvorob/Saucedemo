@@ -4,10 +4,16 @@ link = "https://www.saucedemo.com/"
 
 
 class InventoryPageLocators():
+    CART_BADGE = (By.CSS_SELECTOR, ".shopping_cart_badge")
     APPER_LOGO = (By.XPATH, "//div[@id='root']//div[@class='app_logo']")
     CART_BTN = (By.ID, "shopping_cart_container")
     PRODUCTS_TITLE = (By.XPATH, '//div[@id="header_container"]//span[@class="title"]')
     UPPER_ROBOT_LOGO = (By.XPATH, "UPPER_ROBOT_LOGO")
+    SORT_MENU_BUTTON = (By.CSS_SELECTOR, '.product_sort_container')
+    SORT_OPTION_BUTTON_AZ = (By.XPATH, "//option[@value='az']")
+    SORT_OPTION_BUTTON_ZA = (By.XPATH, "//option[@value='za']")
+    SORT_OPTION_BUTTON_LOWHIGH = (By.XPATH, "//option[@value='lohi']")
+    SORT_OPTION_BUTTON_HIGHLOW = (By.XPATH, "//option[@value='hilo']")
     # burger menu locators
     BURGER_BTN = (By.ID, "react-burger-menu-btn")
     BURGER_MENU_ALL_ITEMS_BTN = (By.ID, "inventory_sidebar_link")
@@ -110,8 +116,18 @@ class InventoryItemPageLocator():
         By.XPATH, "//div[@id='inventory_item_container']//div[@class='inventory_details_name large_size']")
     INVENTORY_ITMEM_IMG = (By.XPATH, "//div[@id='inventory_item_container']//img[@class='inventory_details_img']")
     INVENTORY_ITMEM_PRICE = (By.XPATH, "//div[@id='inventory_item_container']//div[@class='inventory_details_price']")
+
     INVENTORY_ITMEM_DESCRIPTION = (
         By.XPATH, "//div[@id='inventory_item_container']//div[@class='inventory_details_desc large_size']")
+
+    INVENTORY_ITMEM_DESCRIPTION = (By.XPATH, "//div[@id='inventory_item_container']//div[@class='inventory_details_desc large_size']")
+    SORT_MENU_BUTTON = (By.CSS_SELECTOR, '.product_sort_container')
+    SORT_OPTION_BUTTON_AZ = (By.XPATH, "//option[@value='az']")
+    SORT_OPTION_BUTTON_ZA = (By.XPATH, "//option[@value='za']")
+    SORT_OPTION_BUTTON_LOWHIGH = (By.XPATH, "//option[@value='lohi']")
+    SORT_OPTION_BUTTON_HIGHLOW = (By.XPATH, "//option[@value='hilo']")
+
+
 
 
 class CartPageLocators():
