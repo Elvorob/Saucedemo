@@ -1,3 +1,5 @@
+import time
+
 from .base_page import BasePage
 from .locators import *
 
@@ -32,3 +34,41 @@ class InventoryPage(BasePage):
 
     def remove_backpack_from_cart(self):
         self.d.find_element(*InventoryPageLocators.BACKPACK_REMOVE_BTN).click()
+
+    def user_on_inventory_page(self):
+        assert "inventory" in self.d.current_url
+
+    def sort_items_on_inventory_page_az(self):
+        unsortedlist = self.d.find_elements(By.CSS_SELECTOR, ".inventory_item_name")
+        self.d.find_element(*InventoryPageLocators.SORT_MENU_BUTTON).click()
+        time.sleep(2)
+        self.d.find_element(*InventoryPageLocators.SORT_OPTION_BUTTON_AZ).click()
+        time.sleep(2)
+        sortedlistAZ = self.d.find_elements(By.CSS_SELECTOR, ".inventory_item_name")
+        assert sortedlistAZ[0] == unsortedlist[0]
+
+    def sort_items_on_inventory_page_za(self):
+        self.d.find_element(*InventoryPageLocators.SORT_MENU_BUTTON).click()
+        time.sleep(2)
+        self.d.find_element(*InventoryPageLocators.SORT_OPTION_BUTTON_AZ).click()
+        time.sleep(2)
+        sortedlistAZ = self.d.find_elements(By.CSS_SELECTOR, ".inventory_item_name")
+        self.d.find_element(*InventoryPageLocators.SORT_MENU_BUTTON).click()
+        time.sleep(2)
+        self.d.find_element(*InventoryPageLocators.SORT_OPTION_BUTTON_ZA).click()
+        time.sleep(2)
+        sortedlistZA = self.d.find_elements(By.CSS_SELECTOR, ".inventory_item_name")
+        assert sortedlistZA[0] == sortedlistAZ[-1]
+
+    def sort_items_on_inventory_page_lowhigh_highlow(self):
+        self.d.find_element(*InventoryPageLocators.SORT_MENU_BUTTON).click()
+        self.d.find_element(*InventoryPageLocators. SORT_OPTION_BUTTON_LOWHIGH).click()
+        time.sleep(2)
+        sortedlist = self.d.find_elements(By.CSS_SELECTOR, ".inventory_item_price")
+        self.d.find_element(*InventoryPageLocators.SORT_MENU_BUTTON).click()
+        self.d.find_element(*InventoryPageLocators.SORT_OPTION_BUTTON_HIGHLOW).click()
+        time.sleep(2)
+        sortedlist1 = self.d.find_elements(By.CSS_SELECTOR, ".inventory_item_price")
+        assert sortedlist[0] == sortedlist1[-1]
+
+
