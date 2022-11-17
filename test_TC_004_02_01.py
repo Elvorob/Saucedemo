@@ -8,5 +8,7 @@ def test_add_to_cart_check_item(d, correct_login):
     d.find_element(By.ID, "shopping_cart_container").click()
 
     time.sleep(2)
-    assert d.find_element(By.CLASS_NAME, "inventory_item_name").text == "Test.allTheThings() T-Shirt (Red)",\
-        'NOT FOUND'
+    assert (
+        d.find_element(By.CLASS_NAME, "inventory_item_name").text
+        == "Test.allTheThings() T-Shirt (Red)"
+    ), "NOT FOUND"

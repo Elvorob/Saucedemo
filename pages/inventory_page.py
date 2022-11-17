@@ -1,6 +1,7 @@
 from .base_page import BasePage
 from .locators import *
 
+
 class InventoryPage(BasePage):
     def add_to_cart_backpack_inventory_item(self):
         self.d.find_element(*InventoryPageLocators.BACKPACK_ADD_BTN).click()
@@ -31,4 +32,3 @@ class InventoryPage(BasePage):
 
     def remove_backpack_from_cart(self):
         self.d.find_element(*InventoryPageLocators.BACKPACK_REMOVE_BTN).click()
-

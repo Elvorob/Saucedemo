@@ -8,7 +8,7 @@ def test_remove_item_from_the_cart(d):
     page = LoginPage(d, link)
     page.open_page()
     time.sleep(2)
-    page.signin_4_username('standard_user', 'secret_sauce')
+    page.signin_4_username("standard_user", "secret_sauce")
     time.sleep(2)
     page.should_go_on_product_page()
     page = InventoryPage(d, link)

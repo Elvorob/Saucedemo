@@ -13,5 +13,7 @@ def test_change_qty(d, correct_login):
 
     cart = CartPage(d, link)
     cart.click_icon_cart()
-    d.find_element(By.XPATH, "/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/div[1]").click()
-
+    d.find_element(
+        By.XPATH,
+        "/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/div[1]",
+    ).click()

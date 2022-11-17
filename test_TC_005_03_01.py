@@ -11,7 +11,7 @@ from .pages.login_page import LoginPage
         ("standard_user", "secret_sauce"),
         ("problem_user", "secret_sauce"),
         ("performance_glitch_user", "secret_sauce"),
-    ]
+    ],
 )
 def test_logout(d, username, password):
     page = LoginPage(d, link)
