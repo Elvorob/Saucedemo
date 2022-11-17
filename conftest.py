@@ -35,10 +35,7 @@ def d(browser):
         o = webdriver.ChromeOptions()
         o.headless = True
         driver = webdriver.Chrome(
-            service=ChromeService(
-                ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install()
-            ),
-            options=o,
+            service=ChromeService(ChromeDriverManager().install()), options=o
         )
     return driver
 
