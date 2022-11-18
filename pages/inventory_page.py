@@ -3,6 +3,7 @@ import time
 from .base_page import BasePage
 from .locators import *
 
+
 class InventoryPage(BasePage):
     def add_to_cart_backpack_inventory_item(self):
         self.d.find_element(*InventoryPageLocators.BACKPACK_ADD_BTN).click()
@@ -61,7 +62,7 @@ class InventoryPage(BasePage):
 
     def sort_items_on_inventory_page_lowhigh_highlow(self):
         self.d.find_element(*InventoryPageLocators.SORT_MENU_BUTTON).click()
-        self.d.find_element(*InventoryPageLocators. SORT_OPTION_BUTTON_LOWHIGH).click()
+        self.d.find_element(*InventoryPageLocators.SORT_OPTION_BUTTON_LOWHIGH).click()
         time.sleep(2)
         sortedlist = self.d.find_elements(By.CSS_SELECTOR, ".inventory_item_price")
         self.d.find_element(*InventoryPageLocators.SORT_MENU_BUTTON).click()
@@ -69,5 +70,3 @@ class InventoryPage(BasePage):
         time.sleep(2)
         sortedlist1 = self.d.find_elements(By.CSS_SELECTOR, ".inventory_item_price")
         assert sortedlist[0] == sortedlist1[-1]
-
-

@@ -2,8 +2,7 @@ from selenium.common.exceptions import NoSuchElementException
 from .locators import *
 
 
-class BasePage():
-
+class BasePage:
     def __init__(self, d, link):
         self.d = d
         self.link = link
