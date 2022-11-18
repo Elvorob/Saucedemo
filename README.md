@@ -23,4 +23,6 @@ report.html - the name of the file, it can be anything //
 
 **Poetry**
   
+  - poetry run pytest (running all tests in the project with poetry)
+  - poetry run pytest test_name.py (running test by name with poetry)
   - poetry run pytest test_name.py --setup-show -sv (shou setups and PASSED/FAILED)
