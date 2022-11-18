@@ -51,8 +51,12 @@ class LoginPage(BasePage):
 
     def login_password(self):
         self.d.get("https://www.saucedemo.com/")
-        self.d.find_element(*LoginPageLocators.USERNAME_INPUT).send_keys(*LoginPageLocators.USER_NAME)
-        self.d.find_element(*LoginPageLocators.PASSWORD_INPUT).send_keys(*LoginPageLocators.PASSWORD)
+        self.d.find_element(*LoginPageLocators.USERNAME_INPUT).send_keys(
+            *LoginPageLocators.USER_NAME
+        )
+        self.d.find_element(*LoginPageLocators.PASSWORD_INPUT).send_keys(
+            *LoginPageLocators.PASSWORD
+        )
         self.d.find_element(*LoginPageLocators.LOGIN_BTN).click()
 
     def user_is_not_authorized(self):

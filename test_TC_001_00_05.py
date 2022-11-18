@@ -15,7 +15,8 @@ def test_login_page_with_empty_fields(d):
     time.sleep(2)
 
     assert (
-        d.find_element(*LoginPageLocators.MESSAGE_EPIC_SADFACE).text == "Epic sadface: Username is required"
+        d.find_element(*LoginPageLocators.MESSAGE_EPIC_SADFACE).text
+        == "Epic sadface: Username is required"
         and d.current_url == link
     )
 
@@ -31,6 +32,7 @@ def test_login_page_with_empty_fields_2(d):
     time.sleep(2)
 
     assert (
-        d.find_element(*LoginPageLocators.MESSAGE_EPIC_SADFACE).text == "Epic sadface: Username is required"
+        d.find_element(*LoginPageLocators.MESSAGE_EPIC_SADFACE).text
+        == "Epic sadface: Username is required"
         and d.current_url == link
     )

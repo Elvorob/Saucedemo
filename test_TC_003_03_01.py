@@ -21,7 +21,9 @@ def test_compare_item_desc(d, correct_login):
 def test_compare_item_price(d, correct_login):
     get_price_list = d.find_element(*InventoryPageLocators.BIKELIGHT_PRICE).text
     d.find_element(*InventoryPageLocators.BIKELIGHT_LABEL).click()
-    get_price_card = d.find_element(*InventoryItemPageLocator.INVENTORY_ITMEM_PRICE).text
+    get_price_card = d.find_element(
+        *InventoryItemPageLocator.INVENTORY_ITMEM_PRICE
+    ).text
     assert get_price_list == get_price_card, "Item Price !ARE NOT! the same"
 
 
