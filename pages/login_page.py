@@ -23,8 +23,7 @@ class LoginPage(BasePage):
 
     ################################################################
     def signin_standart_user(self, login="login", password="password"):
-        username_input = self.d.find_element(*LoginPageLocators.USERNAME_INPUT)
-        username_input.send_keys(login)
+        self.d.find_element(*LoginPageLocators.USERNAME_INPUT).send_keys(login)
         password_input = self.d.find_element(*LoginPageLocators.PASSWORD_INPUT)
         password_input.send_keys(password)
         self.d.find_element(*LoginPageLocators.LOGIN_BTN).click()
