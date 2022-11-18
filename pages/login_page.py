@@ -24,8 +24,7 @@ class LoginPage(BasePage):
     ################################################################
     def signin_standart_user(self, login="login", password="password"):
         self.d.find_element(*LoginPageLocators.USERNAME_INPUT).send_keys(login)
-        password_input = self.d.find_element(*LoginPageLocators.PASSWORD_INPUT)
-        password_input.send_keys(password)
+        self.d.find_element(*LoginPageLocators.PASSWORD_INPUT).send_keys(password)
         self.d.find_element(*LoginPageLocators.LOGIN_BTN).click()
 
     def should_go_on_product_page(self):
