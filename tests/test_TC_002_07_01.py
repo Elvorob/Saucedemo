@@ -1,7 +1,7 @@
 import time
-from pages.login_page import LoginPage
-from pages.inventory_page import InventoryPage
-from pages.locators import link
+from Saucedemo.pages.login_page import LoginPage
+from Saucedemo.pages.inventory_page import InventoryPage
+from Saucedemo.pages.locators import link
 
 
 def test_add_item_in_the_cart(d):
