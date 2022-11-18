@@ -4,6 +4,8 @@
 Инструкция как работать с репозиторием:
 https://docs.google.com/document/d/1-eqVnOTsdPmREaV7frzYSc0VGnU-3FhHAfutOBCzdCw/edit?usp=sharing
 
+*Do not forget check your tests with black and flake8 befor pushing*
+
 **pytest flags**
 - -s - prints desired output (pytest -s test_file_name)
 - -v - shows test process' percentage (pytest -v test_file_name)
