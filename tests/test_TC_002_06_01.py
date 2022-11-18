@@ -1,7 +1,7 @@
 import time
-from .pages.login_page import LoginPage
-from .pages.inventory_page import InventoryPage
-from .pages.locators import link
+from pages.login_page import LoginPage
+from pages.inventory_page import InventoryPage
+from pages.locators import link
 
 
 def test_remove_item_from_the_cart(d):

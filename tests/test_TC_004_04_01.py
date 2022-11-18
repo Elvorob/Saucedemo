@@ -1,5 +1,5 @@
 import pytest
-from .pages.cart_page import *
+from pages.cart_page import *
 
 
 @pytest.mark.xfail(rises="NotWorking")

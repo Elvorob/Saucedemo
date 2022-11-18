@@ -1,7 +1,7 @@
 import pytest
 
-from .pages.locators import LoginPageLocators
-from .pages.login_page import LoginPage
+from pages.locators import LoginPageLocators
+from pages.login_page import LoginPage
 
 link = "https://www.saucedemo.com/"
 

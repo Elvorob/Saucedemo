@@ -1,5 +1,5 @@
 import pytest
-from .pages.login_page import *
+from pages.login_page import *
 
 # from .pages.cart_page import *
 
