@@ -7,6 +7,7 @@ link = "https://www.saucedemo.com/"
 
 
 # вариант теста когда мы проверяем наличие окна об ошибке
+#
 def test_correct_username_wrong_password(d):
     page = LoginPage(d, link)
     page.should_be_login_form()
