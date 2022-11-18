@@ -16,12 +16,12 @@ def test_change_qty(d, correct_login):
     d.find_element(*CheckoutPageLocators.LAST_NAME).send_keys("Test_password")
     d.find_element(*CheckoutPageLocators.ZIP_P_CODE).send_keys("43250")
     d.find_element(*CheckoutPageLocators.CONTINUE).click()
-    assert (d.current_url, "https://www.saucedemo.com/checkout-step-two.html"), "Not Found"
+    assert d.current_url == "https://www.saucedemo.com/checkout-step-two.html", "Not Found"
 
     d.find_element(*CheckoutPageLocators.FINISH).click()
     complete_message_text = d.find_element(By.XPATH, '//*[@id="checkout_complete_container"]/h2').text
     expected_complete_message = 'THANK YOU FOR YOUR ORDER'
-    assert (complete_message_text == expected_complete_message)
+    assert complete_message_text == expected_complete_message
     print("______THANKS FOR YOUR ORDER_____")
     d.find_element(By.ID, "back-to-products").click()
-    assert (d.current_url, "https://www.saucedemo.com/inventory.html"), "Page Not Found!!!"
+    assert d.current_url == "https://www.saucedemo.com/inventory.html", "Page Not Found!!!"
