@@ -1,4 +1,9 @@
 # Saucedemo
+Сайт https://www.saucedemo.com/
+
+Инструкция как работать с репозиторием:
+https://docs.google.com/document/d/1-eqVnOTsdPmREaV7frzYSc0VGnU-3FhHAfutOBCzdCw/edit?usp=sharing
+
 
 **pytest-xdist**
 
