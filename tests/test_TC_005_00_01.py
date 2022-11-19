@@ -1,7 +1,7 @@
 import time
-from pages.locators import InventoryPageLocators
-from pages.locators import link
-from pages.login_page import LoginPage
+from ..pages.locators import InventoryPageLocators
+from ..pages.locators import link
+from ..pages.login_page import LoginPage
 
 
 def test_about_page_standard_user(d):

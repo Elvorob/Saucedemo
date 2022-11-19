@@ -1,7 +1,7 @@
 import time
-from Saucedemo.pages.login_page import LoginPage
-from Saucedemo.pages.inventory_page import InventoryPage
-from Saucedemo.pages.locators import link
+from ..pages.login_page import LoginPage
+from ..pages.inventory_page import InventoryPage
+from ..pages.locators import link
 
 
 def test_sort_items_az_za_lowhigh_highlow(d):
