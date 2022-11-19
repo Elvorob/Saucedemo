@@ -34,33 +34,36 @@ report.html - the name of the file, it can be anything //
 
 **how add python-html reports:**
   
-poetry add pytest -html
+    -poetry add pytest -html
 
 **start:**
   
-poetry run pytest Tests/test_name.py --html=report/report.html --self-contained-html
+    -poetry run pytest Tests/test_name.py --html=report/report.html --self-contained-html
 
 **--------ALLURE------**
 
-**Create allure
--pytest --alluredir=/allure
+**Create allure:**
+  
+    -pytest --alluredir=/allure
 
-**Create report html**
--allure serve/allure
+**Create report html:**
+  
+    -allure serve/allure
 
-**creating a report from an existing one allure**
+**Creating a report from an existing one allure:**
 
--allure generate <директория где лежит отчет>
--(exmpl.allure generate C:\allure)
+    -allure generate <директория где лежит отчет>
+  
+    -(exmpl.allure generate C:\allure)
 
 **Open allure report:**
   
--allure open <directory>  
+    -allure open <directory>  
 
 **clean:**
   
--allure report clean 
+    -allure report clean 
 
 **Change directory:**
 
--allure generate old directory-o new directory
+    -allure generate old directory-o new directory
