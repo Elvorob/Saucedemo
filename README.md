@@ -29,8 +29,8 @@ report.html - the name of the file, it can be anything //
   - poetry run pytest test_name.py (running test by name with poetry)
   - poetry run pytest test_name.py --setup-show -sv (shou setups and PASSED/FAILED)//
   
-**-----------------------------------**
-**PYTHON_HTML_REPORT**
+
+**------PYTHON_HTML_REPORT--------**
 
 **how add python-html reports:**
   
@@ -43,22 +43,24 @@ poetry run pytest Tests/test_name.py --html=report/report.html --self-contained-
 **ALLURE**
 
 **Create allure
-pytest --alluredir=/allure
+-pytest --alluredir=/allure
 
 **Create report html**
-allure serve/allure
+-allure serve/allure
 
 **creating a report from an existing one allure**
 
-allure generate <директория где лежит отчет>//
-(exmpl.allure generate C:\allure)//
+-allure generate <директория где лежит отчет>
+-(exmpl.allure generate C:\allure)
 
-**Open allure report**
-allure open <directory>  
+**Open allure report:**
+  
+-allure open <directory>  
 
-**clean**
-allure report clean 
+**clean:**
+  
+-allure report clean 
 
-**Change directory**
+**Change directory:**
 
-allure generate <old directory>-o <new directory>
+-allure generate <old directory>-o <new directory>
