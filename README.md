@@ -33,7 +33,7 @@ report.html - the name of the file, it can be anything //
 
   
 # PYTHON_HTML_REPORT
-#### WEB с дополнительной информацией &middot;[![WEB-SITE](https://img.shields.io/badge/PRs-website-brightgreen.svg?style=flat-square)](https://pytest-html.readthedocs.io/en/latest/user_guide.html)
+#### WEB с дополнительной информацией &middot;[![pytest-html](https://img.shields.io/badge/pyhtml-website-brightgreen.svg?style=flat-square)](https://pytest-html.readthedocs.io/en/latest/user_guide.html)
 
 ### *How add python-html reports*:
   
@@ -44,7 +44,7 @@ report.html - the name of the file, it can be anything //
      poetry run pytest Tests/test_name.py --html=report/report.html --self-contained-html
 
 # ALLURE
-#### WEB с дополнительной информацией &middot;[![WEB-SITE](https://img.shields.io/badge/PRs-website-brightgreen.svg?style=flat-square)](https://docs.qameta.io/allure/#_pytest)
+#### WEB с дополнительной информацией &middot;[![WEB-SITE](https://img.shields.io/badge/allure-website-brightgreen.svg?style=flat-square)](https://docs.qameta.io/allure/#_pytest)
   
 ### ***Create allure:***
   
