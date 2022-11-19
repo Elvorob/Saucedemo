@@ -40,7 +40,7 @@ poetry add pytest -html
   
 poetry run pytest Tests/test_name.py --html=report/report.html --self-contained-html
 
-**ALLURE**
+**--------ALLURE------**
 
 **Create allure
 -pytest --alluredir=/allure
@@ -63,4 +63,4 @@ poetry run pytest Tests/test_name.py --html=report/report.html --self-contained-
 
 **Change directory:**
 
--allure generate <old directory>-o <new directory>
+-allure generate old directory-o new directory
