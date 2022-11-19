@@ -1,3 +1,4 @@
+[![GitHub Actions saucedemo](https://github.com/ivanovajulika/RedRover/actions/workflows/action.yml/badge.svg)](https://github.com/Elvorob/Saucedemo/actions)
 # Saucedemo
 Website: https://www.saucedemo.com/
 
