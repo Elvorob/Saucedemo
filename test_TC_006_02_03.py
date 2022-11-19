@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 
 
-def test_presence_copywriter(d, correct_login):
+def test_presence_copywriter_cp(d, correct_login):
     d.find_element(By.CLASS_NAME, "app_logo").click()
     assert d.title == "Swag Labs", "NOT FOUNDED"
 
