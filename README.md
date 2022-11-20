@@ -4,10 +4,11 @@
 
 
 [<img src="https://www.saucedemo.com/static/media/Login_Bot_graphic.20658452.png" width="140" height="140">](https://www.saucedemo.com/)
-
-- [PYTHON_HTML_REPORT](#some-html)
-- [ALLURE](#some-allure)
+- [Poetry](#some-poetry)
+- [Python html report](#some-html)
+- [Allure](#some-allure)
 - [Creat Allure single HTML file builder](#some-allure-html-file)
+
 # **Инструкция как работать с репозиторием:**
 
 https://docs.google.com/document/d/1-eqVnOTsdPmREaV7frzYSc0VGnU-3FhHAfutOBCzdCw/edit?usp=sharing
@@ -31,11 +32,19 @@ pytest <name of test> --html=report/report.html --self-contained-html //
 right click to file > open in browser or in finder //  
 report.html - the name of the file, it can be anything //  
 
-**Poetry**
+# POETRY<a name="some-poetry"></a>
   
-  - poetry run pytest (running all tests in the project with poetry)
-  - poetry run pytest test_name.py (running test by name with poetry)
-  - poetry run pytest test_name.py --setup-show -sv (shou setups and PASSED/FAILED)//
+* Running all tests in the project with poetry
+  
+      poetry run pytest 
+  
+* Running test by name with poetry
+  
+      poetry run pytest test_name.py 
+  
+* Shou setups and PASSED/FAILED
+  
+      poetry run pytest test_name.py --setup-show -sv 
    
 # PYTHON_HTML_REPORT <a name="some-html"></a>
 #### WEB с дополнительной информацией &middot;[![pytest-html](https://img.shields.io/badge/pyhtml-website-brightgreen.svg?style=flat-square)](https://pytest-html.readthedocs.io/en/latest/user_guide.html)
