@@ -4,6 +4,7 @@
 
 
 [<img src="https://www.saucedemo.com/static/media/Login_Bot_graphic.20658452.png" width="140" height="140">](https://www.saucedemo.com/)
+- [Pytest inf](#some-pytest)
 - [Poetry](#some-poetry)
 - [Python html report](#some-html)
 - [Allure](#some-allure)
@@ -13,17 +14,22 @@
 
 https://docs.google.com/document/d/1-eqVnOTsdPmREaV7frzYSc0VGnU-3FhHAfutOBCzdCw/edit?usp=sharing
 
-*Do not forget check your tests with black and flake8 befor pushing*
+# Pytest INFO:<a name="some-pytest"></a>
 
-**pytest flags**
-- -s - prints desired output (pytest -s test_file_name)
-- -v - shows test process' percentage (pytest -v test_file_name)
-- -m - allows to run tests with specific marks (pytest -m mark_title test_file_name)
+> ***Do not forget check your tests with black and flake8 befor pushing***
 
-**pytest-xdist**
+### **pytest flags**
+    -s - prints desired output (pytest -s test_file_name)
+    
+    -v - shows test process' percentage (pytest -v test_file_name)
+    
+    -m - allows to run tests with specific marks (pytest -m mark_title test_file_name)
 
-Запускает несколько тестов одновременно //  
-pytest -n auto OR pytest -n 5( any number)
+### **pytest-xdist**
+
+##### *Запускает несколько тестов одновременно* 
+
+    pytest -n auto OR pytest -n 5( any number)
 
 # POETRY<a name="some-poetry"></a> 
 #### WEB с дополнительной информацией &middot;[![poetry](https://img.shields.io/badge/poetry-website-brightgreen.svg?style=flat-square)](https://python-poetry.org/docs/)
@@ -59,11 +65,11 @@ pytest -n auto OR pytest -n 5( any number)
   
 ### ***Create allure:***
   
-##### Создаст отчет по всем тестам:
+###### Создаст отчет по всем тестам:
   
     pytest --alluredir=/allure
   
-##### Создаст отчет по  указанному тесту:
+###### Создаст отчет по  указанному тесту:
   
     pytest имя теста --alluredir=/allure
   
