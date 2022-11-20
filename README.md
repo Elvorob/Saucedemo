@@ -1,7 +1,7 @@
 [![GitHub Actions saucedemo](https://github.com/ivanovajulika/RedRover/actions/workflows/action.yml/badge.svg)](https://github.com/Elvorob/Saucedemo/actions)
 # ***SAUCEDEMO***
 
-[Click Website](https://www.saucedemo.com/) 
+👉[Click Website](https://www.saucedemo.com/) 
 
 
 [<img src="https://www.saucedemo.com/static/media/Login_Bot_graphic.20658452.png" width="140" height="140">](https://www.saucedemo.com/)
@@ -16,7 +16,7 @@
 # **Как работать с репозиторием?:** <a name="some-inst"></a>
 <img src="https://www.press-store.net/_pu/0/29765718.jpg" width="60" height="60"> 
 
-[Ссылка на инструкцию](https://docs.google.com/document/d/1-eqVnOTsdPmREaV7frzYSc0VGnU-3FhHAfutOBCzdCw/edit?usp=sharing)
+👉[Ссылка на инструкцию](https://docs.google.com/document/d/1-eqVnOTsdPmREaV7frzYSc0VGnU-3FhHAfutOBCzdCw/edit?usp=sharing)
 
 # Pytest INFO:<a name="some-pytest"></a> [![pytest](https://img.shields.io/badge/pytest-website-brightgreen.svg?style=flat-square)](https://docs.pytest.org/en/7.2.x/)
 
@@ -61,8 +61,8 @@
   
     poetry run pytest Tests/test_name.py --html=report/report.html --self-contained-html
     
-### right click to file > open in browser or in finder  
-### report.html - the name of the file, it can be anything  
+##### right click to file > open in browser or in finder  
+##### report.html - the name of the file, it can be anything  
 
 # ALLURE <a name="some-allure"></a>
 #### WEB с дополнительной информацией &middot;[![WEB-SITE](https://img.shields.io/badge/allure-website-brightgreen.svg?style=flat-square)](https://docs.qameta.io/allure/#_pytest)
