@@ -18,7 +18,7 @@
 
 [Ссылка на инструкцию](https://docs.google.com/document/d/1-eqVnOTsdPmREaV7frzYSc0VGnU-3FhHAfutOBCzdCw/edit?usp=sharing)
 
-# Pytest INFO:<a name="some-pytest"></a>
+# Pytest INFO:<a name="some-pytest"></a> [![pytest](https://img.shields.io/badge/pytest-website-brightgreen.svg?style=flat-square)](https://docs.pytest.org/en/7.2.x/)
 
 > ***Do not forget check your tests with black and flake8 befor pushing***
 
