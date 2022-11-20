@@ -1,5 +1,5 @@
 [![GitHub Actions saucedemo](https://github.com/ivanovajulika/RedRover/actions/workflows/action.yml/badge.svg)](https://github.com/Elvorob/Saucedemo/actions)
-# ***Saucedemo***
+# ***SAUCEDEMO***
 ### Website: https://www.saucedemo.com/ 
 
 
@@ -25,26 +25,20 @@ https://docs.google.com/document/d/1-eqVnOTsdPmREaV7frzYSc0VGnU-3FhHAfutOBCzdCw/
 Запускает несколько тестов одновременно //  
 pytest -n auto OR pytest -n 5( any number)
 
-
-**pytest-html**
-
-pytest <name of test> --html=report/report.html --self-contained-html //  
-right click to file > open in browser or in finder //  
-report.html - the name of the file, it can be anything //  
-
-# POETRY<a name="some-poetry"></a>
+# POETRY<a name="some-poetry"></a> 
+#### WEB с дополнительной информацией &middot;[![poetry](https://img.shields.io/badge/poetry-website-brightgreen.svg?style=flat-square)](https://python-poetry.org/docs/)
   
-* Running all tests in the project with poetry
+### *Running all tests in the project with poetry:*
   
-      poetry run pytest 
+    poetry run pytest 
   
-* Running test by name with poetry
+### *Running test by name with poetry:*
   
-      poetry run pytest test_name.py 
+    poetry run pytest test_name.py 
   
-* Shou setups and PASSED/FAILED
+### *Shou setups and PASSED/FAILED^*
   
-      poetry run pytest test_name.py --setup-show -sv 
+    poetry run pytest test_name.py --setup-show -sv 
    
 # PYTHON_HTML_REPORT <a name="some-html"></a>
 #### WEB с дополнительной информацией &middot;[![pytest-html](https://img.shields.io/badge/pyhtml-website-brightgreen.svg?style=flat-square)](https://pytest-html.readthedocs.io/en/latest/user_guide.html)
@@ -56,6 +50,9 @@ report.html - the name of the file, it can be anything //
 ### ***Start:***
   
     poetry run pytest Tests/test_name.py --html=report/report.html --self-contained-html
+    
+### right click to file > open in browser or in finder  
+### report.html - the name of the file, it can be anything  
 
 # ALLURE <a name="some-allure"></a>
 #### WEB с дополнительной информацией &middot;[![WEB-SITE](https://img.shields.io/badge/allure-website-brightgreen.svg?style=flat-square)](https://docs.qameta.io/allure/#_pytest)
