@@ -52,13 +52,14 @@ report.html - the name of the file, it can be anything //
 
 ### ***Create report html:***
   
-     allure serve/allure
-
+     allure serve 
+     
+-exmpl(allure serve <C:\allure>)
 ### ***Creating a report from an existing one allure:***
 
      allure generate <директория где лежит отчет>
   
-    -(exmpl.allure generate C:\allure)
+-(exmpl.allure generate C:\allure)
 
 ### ***Open allure report:***
   
