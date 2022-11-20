@@ -1,18 +1,22 @@
 [![GitHub Actions saucedemo](https://github.com/ivanovajulika/RedRover/actions/workflows/action.yml/badge.svg)](https://github.com/Elvorob/Saucedemo/actions)
 # ***SAUCEDEMO***
-### Website: https://www.saucedemo.com/ 
+
+[Click Website](https://www.saucedemo.com/) 
 
 
 [<img src="https://www.saucedemo.com/static/media/Login_Bot_graphic.20658452.png" width="140" height="140">](https://www.saucedemo.com/)
+- [Как работать с репозиторием?](#some-inst)
 - [Pytest inf](#some-pytest)
 - [Poetry](#some-poetry)
 - [Python html report](#some-html)
 - [Allure](#some-allure)
 - [Creat Allure single HTML file builder](#some-allure-html-file)
 
-# **Инструкция как работать с репозиторием:**
 
-https://docs.google.com/document/d/1-eqVnOTsdPmREaV7frzYSc0VGnU-3FhHAfutOBCzdCw/edit?usp=sharing
+# **Как работать с репозиторием?:** <a name="some-inst"></a>
+<img src="https://www.press-store.net/_pu/0/29765718.jpg" width="60" height="60"> 
+
+[Ссылка на инструкцию](https://docs.google.com/document/d/1-eqVnOTsdPmREaV7frzYSc0VGnU-3FhHAfutOBCzdCw/edit?usp=sharing)
 
 # Pytest INFO:<a name="some-pytest"></a>
 
