@@ -1,7 +1,7 @@
 [![GitHub Actions saucedemo](https://github.com/ivanovajulika/RedRover/actions/workflows/action.yml/badge.svg)](https://github.com/Elvorob/Saucedemo/actions)
 # ***SAUCEDEMO***
 
-👉[Click on the robot]
+[Web-Site]👉
 [<img src="https://www.saucedemo.com/static/media/Login_Bot_graphic.20658452.png" width="120" height="120">](https://www.saucedemo.com/)
 
 - [Как работать с репозиторием?](#some-inst)
