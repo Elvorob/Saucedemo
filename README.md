@@ -1,10 +1,8 @@
 [![GitHub Actions saucedemo](https://github.com/ivanovajulika/RedRover/actions/workflows/action.yml/badge.svg)](https://github.com/Elvorob/Saucedemo/actions)
 # ***SAUCEDEMO***
 
-👉[Click Website](https://www.saucedemo.com/) 
+👉[Click robot][<img src="https://www.saucedemo.com/static/media/Login_Bot_graphic.20658452.png" width="140" height="140">](https://www.saucedemo.com/)
 
-
-[<img src="https://www.saucedemo.com/static/media/Login_Bot_graphic.20658452.png" width="140" height="140">](https://www.saucedemo.com/)
 - [Как работать с репозиторием?](#some-inst)
 - [Pytest inf](#some-pytest)
 - [Poetry](#some-poetry)
