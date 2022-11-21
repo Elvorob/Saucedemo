@@ -6,7 +6,7 @@
 ___
 # Table of contents
 - [Как работать с репозиторием?](#some-inst)
-- [Pytest inf](#some-pytest)
+- [Pytest INFO](#some-pytest)
 - [Poetry](#some-poetry)
 - [Python html report](#some-html)
 - [Allure](#some-allure)
@@ -37,7 +37,7 @@ ___
     pytest -n auto OR pytest -n 5( any number)
     
 ⬆️<sup>(back to [table of contents](#table-of-contents))</sup>
-
+___
 # POETRY<a name="some-poetry"></a> 
 #### WEB с дополнительной информацией &middot;[![poetry](https://img.shields.io/badge/poetry-website-brightgreen.svg?style=flat-square)](https://python-poetry.org/docs/)
   
@@ -54,7 +54,7 @@ ___
     poetry run pytest test_name.py --setup-show -sv 
     
 ⬆️<sup>(back to [table of contents](#table-of-contents))</sup>
-
+___
 # PYTHON_HTML_REPORT <a name="some-html"></a>
 #### WEB с дополнительной информацией &middot;[![pytest-html](https://img.shields.io/badge/pyhtml-website-brightgreen.svg?style=flat-square)](https://pytest-html.readthedocs.io/en/latest/user_guide.html)
 ### ***Installation:***
@@ -72,7 +72,7 @@ ___
 ##### report.html - the name of the file, it can be anything
 
 ⬆️<sup>(back to [table of contents](#table-of-contents))</sup>
-
+___
 # ALLURE <a name="some-allure"></a>
 #### WEB с дополнительной информацией &middot;[![WEB-SITE](https://img.shields.io/badge/allure-website-brightgreen.svg?style=flat-square)](https://docs.qameta.io/allure/#_pytest)
 
@@ -116,7 +116,7 @@ ___
 ### ***Change directory:***
 
     allure generate old directory-o new directory
-
+___
 # Useful links <a name="some-links"></a>
 
 👉[Установка Black](https://pypi.org/project/black/)
