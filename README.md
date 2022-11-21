@@ -3,7 +3,8 @@
 
 [Web-Site]👉
 [<img src="https://www.saucedemo.com/static/media/Login_Bot_graphic.20658452.png" width="120" height="120">](https://www.saucedemo.com/)
-
+___
+# Table of contents
 - [Как работать с репозиторием?](#some-inst)
 - [Pytest inf](#some-pytest)
 - [Poetry](#some-poetry)
@@ -11,6 +12,7 @@
 - [Allure](#some-allure)
 - [Creat Allure single HTML file builder](#some-allure-html-file)
 - [Useful links](#some-links)
+___
 
 # **Как работать с репозиторием?:** <a name="some-inst"></a>
 <img src="https://www.press-store.net/_pu/0/29765718.jpg" width="60" height="60"> 
@@ -33,6 +35,8 @@
 ##### *Запускает несколько тестов одновременно* 
 
     pytest -n auto OR pytest -n 5( any number)
+    
+⬆️<sup>(back to [table of contents](#table-of-contents))</sup>
 
 # POETRY<a name="some-poetry"></a> 
 #### WEB с дополнительной информацией &middot;[![poetry](https://img.shields.io/badge/poetry-website-brightgreen.svg?style=flat-square)](https://python-poetry.org/docs/)
@@ -48,9 +52,13 @@
 ### *Shou setups and PASSED/FAILED^*
   
     poetry run pytest test_name.py --setup-show -sv 
-   
+    
+⬆️<sup>(back to [table of contents](#table-of-contents))</sup>
+
 # PYTHON_HTML_REPORT <a name="some-html"></a>
 #### WEB с дополнительной информацией &middot;[![pytest-html](https://img.shields.io/badge/pyhtml-website-brightgreen.svg?style=flat-square)](https://pytest-html.readthedocs.io/en/latest/user_guide.html)
+### ***Installation:***
+    pip install pytest-html
 
 ### *How add python-html reports*:
   
@@ -61,34 +69,36 @@
     poetry run pytest <your_test_name.py> --html=report/report.html --self-contained-html
     
 ##### right click to file > open in browser or in finder  
-##### report.html - the name of the file, it can be anything  
+##### report.html - the name of the file, it can be anything
+
+⬆️<sup>(back to [table of contents](#table-of-contents))</sup>
 
 # ALLURE <a name="some-allure"></a>
 #### WEB с дополнительной информацией &middot;[![WEB-SITE](https://img.shields.io/badge/allure-website-brightgreen.svg?style=flat-square)](https://docs.qameta.io/allure/#_pytest)
+
+### ***Installation:***
+    pip install allure-pytest
+    pip install allure-combine
   
-### ***Create allure:***
+### ***1. Create allure:***
   
-###### Создаст отчет по всем тестам:
+###### Соберёт отчеты по всем тестам:
   
     pytest --alluredir=allure
   
-###### Создаст отчет по  указанному тесту:
+###### Соберёт отчет по  указанному тесту:
   
     pytest имя теста --alluredir=allure
   
-### ***Create report html:***
+### ***2. Create report html:***
      
     allure serve allure
-    
-
-  
-### ***Creating a report from an existing one allure:***
+      
+### ***3. Creating a report from an existing one allure:***
   
     allure generate <директория где лежит отчет>
   
-
-  
-# Creat Allure single HTML file builder<a name="some-allure-html-file"></a>
+### ***4. Create single HTML report:***<a name="some-allure-html-file"></a>
 -создает файл `complete.html`
   
     allure-combine ./allure-report
@@ -116,3 +126,10 @@
 👉[About SELENIUM](https://selenium-python.readthedocs.io/)
 
 👉[About SELENIUM.2](https://www.selenium.dev/documentation/)
+
+👉[About Python](https://www.python.org/)
+
+👉[Allure-combine](https://pypi.org/project/allure-combine/)
+
+
+⬆️ <sup>(back to [table of contents](#table-of-contents))</sup>
