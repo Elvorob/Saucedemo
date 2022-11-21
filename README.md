@@ -59,7 +59,7 @@
 
 ### ***Start:***
   
-    poetry run pytest Tests/test_name.py --html=report/report.html --self-contained-html
+    poetry run pytest <your_test_name.py> --html=report/report.html --self-contained-html
     
 ##### right click to file > open in browser or in finder  
 ##### report.html - the name of the file, it can be anything  
@@ -71,23 +71,23 @@
   
 ###### Создаст отчет по всем тестам:
   
-    pytest --alluredir=/allure
+    pytest --alluredir=allure
   
 ###### Создаст отчет по  указанному тесту:
   
-    pytest имя теста --alluredir=/allure
+    pytest имя теста --alluredir=allure
   
 ### ***Create report html:***
      
-    allure serve
+    allure serve allure
     
--exmpl(allure serve <C:\allure>)
+
   
 ### ***Creating a report from an existing one allure:***
   
     allure generate <директория где лежит отчет>
   
--exmpl (allure generate C:\allure)
+
   
 # Creat Allure single HTML file builder<a name="some-allure-html-file"></a>
 -создает файл `complete.html`
