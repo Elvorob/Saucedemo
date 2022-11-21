@@ -115,3 +115,5 @@
 👉[Установка Flake8](https://flake8.pycqa.org/en/latest/index.html#quickstart)
 
 👉[About SELENIUM](https://selenium-python.readthedocs.io/)
+
+👉[About SELENIUM.2](https://www.selenium.dev/documentation/)
