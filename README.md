@@ -90,16 +90,16 @@ ___
   
     pytest имя теста --alluredir=allure
   
-### ***2. Create report html:***
+### ***2. Generates a report and opens it in a browser::***
      
     allure serve allure
       
-### ***3. Creating a report from an existing one allure:***
+### ***3. Report generated for allure-report:***
   
     allure generate <директория где лежит отчет>
   
 ### ***4. Create single HTML report:***<a name="some-allure-html-file"></a>
--создает файл `complete.html`
+-создает файл с отчетом `complete.html`(можно делиться с другими) 
   
     allure-combine ./allure-report
   
