@@ -3,7 +3,9 @@
 
 [Web-Site]👉
 [<img src="https://www.saucedemo.com/static/media/Login_Bot_graphic.20658452.png" width="120" height="120">](https://www.saucedemo.com/)
-___
+[OUR]👉
+[<img src="https://cdn.icon-icons.com/icons2/2699/PNG/512/trello_logo_icon_168452.png" width="100" height="70">](https://trello.com/b/kW09yTkM/practice-letsdoit-group)
+
 # Table of contents
 - [Как работать с репозиторием?](#some-inst)
 - [Pytest INFO](#some-pytest)
