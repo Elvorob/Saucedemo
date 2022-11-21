@@ -11,7 +11,7 @@
 - [Python html report](#some-html)
 - [Allure](#some-allure)
 - [Creat Allure single HTML file builder](#some-allure-html-file)
-
+- [Useful links](#some-links)
 
 # **Как работать с репозиторием?:** <a name="some-inst"></a>
 <img src="https://www.press-store.net/_pu/0/29765718.jpg" width="60" height="60"> 
@@ -107,3 +107,11 @@
 ### ***Change directory:***
 
     allure generate old directory-o new directory
+
+# Useful links <a name="some-links"></a>
+
+👉[Установка Black](https://pypi.org/project/black/)
+
+👉[Установка Flake8](https://flake8.pycqa.org/en/latest/index.html#quickstart)
+
+👉[About SELENIUM](https://selenium-python.readthedocs.io/)
