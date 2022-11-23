@@ -4,7 +4,7 @@ from ..pages.inventory_page import InventoryPage
 from ..pages.locators import link
 
 
-def test_return_from_product_cart(d):
+def test_return_from_itempage(d):
     page = LoginPage(d, link)
     page.open_page()
     time.sleep(2)
@@ -15,4 +15,3 @@ def test_return_from_product_cart(d):
     page.go_to_backpack_item_page()
     time.sleep(2)
     page.go_back_from_itempage_to_inventorypage()
-
