@@ -1,5 +1,4 @@
 import time
-
 from .base_page import BasePage
 from .locators import *
 
@@ -38,27 +37,35 @@ class InventoryPage(BasePage):
     def user_on_inventory_page(self):
         assert "inventory" in self.d.current_url
 
-    def sort_items_on_inventory_page_az(self):
+    def sort_items_on_inventory_page_az_za(self):
         unsortedlist = self.d.find_elements(By.CSS_SELECTOR, ".inventory_item_name")
+        unsortedfinal = []
+        for x in unsortedlist:
+            unsortedfinal.append(x.text)
+        unsortedfinal.sort()
+        print(unsortedfinal)
         self.d.find_element(*InventoryPageLocators.SORT_MENU_BUTTON).click()
         time.sleep(2)
         self.d.find_element(*InventoryPageLocators.SORT_OPTION_BUTTON_AZ).click()
         time.sleep(2)
-        sortedlistAZ = self.d.find_elements(By.CSS_SELECTOR, ".inventory_item_name")
-        assert sortedlistAZ[0] == unsortedlist[0]
-
-    def sort_items_on_inventory_page_za(self):
-        self.d.find_element(*InventoryPageLocators.SORT_MENU_BUTTON).click()
-        time.sleep(2)
-        self.d.find_element(*InventoryPageLocators.SORT_OPTION_BUTTON_AZ).click()
-        time.sleep(2)
-        sortedlistAZ = self.d.find_elements(By.CSS_SELECTOR, ".inventory_item_name")
+        sortedlistaz = self.d.find_elements(By.CSS_SELECTOR, ".inventory_item_name")
+        sortedazfinal = []
+        for i in sortedlistaz:
+            sortedazfinal.append(i.text)
+        print(sortedazfinal)
         self.d.find_element(*InventoryPageLocators.SORT_MENU_BUTTON).click()
         time.sleep(2)
         self.d.find_element(*InventoryPageLocators.SORT_OPTION_BUTTON_ZA).click()
         time.sleep(2)
-        sortedlistZA = self.d.find_elements(By.CSS_SELECTOR, ".inventory_item_name")
-        assert sortedlistZA[0] == sortedlistAZ[-1]
+        sortedlistza = self.d.find_elements(By.CSS_SELECTOR, ".inventory_item_name")
+        sortedzafinal = []
+        for p in sortedlistza:
+            sortedzafinal.append(p.text)
+        print(sortedzafinal)
+        sortedzafinal.reverse()
+        print(sortedzafinal)
+        assert sortedazfinal == unsortedfinal
+        assert sortedazfinal == sortedzafinal
 
     def sort_items_on_inventory_page_lowhigh_highlow(self):
         self.d.find_element(*InventoryPageLocators.SORT_MENU_BUTTON).click()
@@ -70,3 +77,11 @@ class InventoryPage(BasePage):
         time.sleep(2)
         sortedlist1 = self.d.find_elements(By.CSS_SELECTOR, ".inventory_item_price")
         assert sortedlist[0] == sortedlist1[-1]
+
+    def go_to_backpack_item_page(self):
+        self.d.find_element(*InventoryPageLocators.BACKPACK_LABEL).click()
+        assert self.element_is_present(*InventoryItemPageLocator.BACK_TO_PRODUCKS_BTN)
+
+    def go_back_from_itempage_to_inventorypage(self):
+        self.d.find_element(*InventoryItemPageLocator.BACK_TO_PRODUCKS_BTN).click()
+        assert self.element_is_present(*InventoryPageLocators.CART_BTN)
