@@ -10,6 +10,7 @@ from webdriver_manager.core.utils import ChromeType
 
 driver = None
 
+
 @pytest.fixture(scope="function")
 def correct_login(d):
     d.get("https://www.saucedemo.com/")
