@@ -1,5 +1,5 @@
-from .pages.locators import InventoryPageLocators
-from .pages.locators import InventoryItemPageLocator
+from ..pages.locators import InventoryPageLocators
+from ..pages.locators import InventoryItemPageLocator
 
 
 def test_compare_item_names(d, correct_login):

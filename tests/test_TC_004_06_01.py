@@ -1,5 +1,5 @@
-from .pages.cart_page import *
-from .pages.locators import CheckoutPageLocators
+from ..pages.cart_page import *
+from ..pages.locators import CheckoutPageLocators
 
 
 def test_change_qty(d, correct_login):

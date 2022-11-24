@@ -1,4 +1,4 @@
-from .pages.locators import LoginPageLocators, link
+from ..pages.locators import LoginPageLocators, link
 import time
 
 
