@@ -73,20 +73,20 @@ def g(d):
 
 # --------- указывать другое имя для отчетов.
 # --------- По умолчанию название report.html
-def pytest_html_report_title(report):
-    report.title = "Sousedemo"
-
-@pytest.hookimpl(hookwrapper=True)
-def pytest_runtest_makereport(item, call):
-    pytest_html = item.config.pluginmanager.getplugin("html")
-    outcome = yield
-    report = outcome.get_result()
-    extra = getattr(report, "extra", [])
-    if report.when == "call":
-        extra.append(pytest_html.extras.url(driver.current_url))
-        xfail = hasattr(report, "wasxfail")
-        if (report.skipped and xfail) or (report.failed and not xfail):
-            # test_name = os.environ.get('PYTEST_CURRENT_TEST').split(':')[-1].split(' ')[0]
-            screenshot = driver.get_screenshot_as_base64()
-            extra.append(pytest_html.extras.image(screenshot, ''))
-        report.extra = extra
+# def pytest_html_report_title(report):
+#     report.title = "Sousedemo"
+#
+# @pytest.hookimpl(hookwrapper=True)
+# def pytest_runtest_makereport(item, call):
+#     pytest_html = item.config.pluginmanager.getplugin("html")
+#     outcome = yield
+#     report = outcome.get_result()
+#     extra = getattr(report, "extra", [])
+#     if report.when == "call":
+#         extra.append(pytest_html.extras.url(driver.current_url))
+#         xfail = hasattr(report, "wasxfail")
+#         if (report.skipped and xfail) or (report.failed and not xfail):
+#             # test_name = os.environ.get('PYTEST_CURRENT_TEST').split(':')[-1].split(' ')[0]
+#             screenshot = driver.get_screenshot_as_base64()
+#             extra.append(pytest_html.extras.image(screenshot, ''))
+#         report.extra = extra
