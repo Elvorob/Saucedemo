@@ -21,7 +21,7 @@ ___
 
 👉[Ссылка на инструкцию](https://docs.google.com/document/d/1-eqVnOTsdPmREaV7frzYSc0VGnU-3FhHAfutOBCzdCw/edit?usp=sharing)
 
-# Pytest INFO:<a name="some-pytest"></a> [![pytest](https://img.shields.io/badge/pytest-website-brightgreen.svg?style=flat-square)](https://docs.pytest.org/en/7.2.x/)
+# Pytest INFO:<a name="some-pytest"></a> [![pytest](https://img.shields.io/badge/pytest-website-mediumslateblue.svg?style=flat-square)](https://docs.pytest.org/en/7.2.x/)
 
 > ***Do not forget check your tests with black and flake8 befor pushing***
 
@@ -41,7 +41,7 @@ ___
 ⬆️(back to [Menu](#table-of-contents))
 ___
 # POETRY<a name="some-poetry"></a> 
-#### WEB с дополнительной информацией &middot;[![poetry](https://img.shields.io/badge/poetry-website-brightgreen.svg?style=flat-square)](https://python-poetry.org/docs/)
+#### WEB с дополнительной информацией &middot;[![poetry](https://img.shields.io/badge/poetry-website-mediumslateblue.svg?style=flat-square)](https://python-poetry.org/docs/)
   
 ### *Running all tests in the project with poetry:*
   
@@ -58,7 +58,7 @@ ___
 ⬆️(back to [Menu](#table-of-contents))
 ___
 # PYTHON_HTML_REPORT <a name="some-html"></a>
-#### WEB с дополнительной информацией &middot;[![pytest-html](https://img.shields.io/badge/pyhtml-website-brightgreen.svg?style=flat-square)](https://pytest-html.readthedocs.io/en/latest/user_guide.html)
+#### WEB с дополнительной информацией &middot;[![pytest-html](https://img.shields.io/badge/pyhtml-website-mediumslateblue.svg?style=flat-square)](https://pytest-html.readthedocs.io/en/latest/user_guide.html)
 ### ***Installation:***
     pip install pytest-html
 
@@ -76,7 +76,7 @@ ___
 ⬆️<sup>(back to [Menu](#table-of-contents))</sup>
 ___
 # ALLURE <a name="some-allure"></a>
-#### WEB с дополнительной информацией &middot;[![WEB-SITE](https://img.shields.io/badge/allure-website-brightgreen.svg?style=flat-square)](https://docs.qameta.io/allure/#_pytest)
+#### WEB с дополнительной информацией &middot;[![WEB-SITE](https://img.shields.io/badge/allure-website-mediumslateblue.svg?style=flat-square)](https://docs.qameta.io/allure/#_pytest)
 
 ### ***Installation:***
     pip install allure-pytest
