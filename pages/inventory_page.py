@@ -77,3 +77,11 @@ class InventoryPage(BasePage):
         time.sleep(2)
         sortedlist1 = self.d.find_elements(By.CSS_SELECTOR, ".inventory_item_price")
         assert sortedlist[0] == sortedlist1[-1]
+
+    def go_to_backpack_item_page(self):
+        self.d.find_element(*InventoryPageLocators.BACKPACK_LABEL).click()
+        assert self.element_is_present(*InventoryItemPageLocator.BACK_TO_PRODUCKS_BTN)
+
+    def go_back_from_itempage_to_inventorypage(self):
+        self.d.find_element(*InventoryItemPageLocator.BACK_TO_PRODUCKS_BTN).click()
+        assert self.element_is_present(*InventoryPageLocators.CART_BTN)
