@@ -5,8 +5,10 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from .pages.locators import *
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.firefox import GeckoDriverManager
+import os
 from webdriver_manager.core.utils import ChromeType
 
+driver = None
 
 @pytest.fixture(scope="function")
 def correct_login(d):
@@ -25,6 +27,9 @@ def correct_login(d):
 
 @pytest.fixture(scope="class")
 def d(browser):
+    global driver
+    if driver is not None:
+        return driver
     if browser == "firefox":
         o = webdriver.FirefoxOptions()
         o.headless = True
@@ -33,7 +38,7 @@ def d(browser):
         )
     else:
         o = webdriver.ChromeOptions()
-        o.headless = True
+        o.headless = False
         driver = webdriver.Chrome(
             service=ChromeService(ChromeDriverManager().install()), options=o
         )
@@ -60,13 +65,28 @@ def browser(request):
 @pytest.fixture(scope="class", autouse=True)
 def g(d):
     print("\n***** start fixture = setup *****\n")
-    d.get("https://www.saucedemo.com/")
+    # d.get("https://www.saucedemo.com/")
     yield d
-    d.quit()
+    # d.quit()
     print("\n***** end fixture = teardown *****\n")
 
 
 # --------- указывать другое имя для отчетов.
 # --------- По умолчанию название report.html
-# def pytest_html_report_title(report):
-#     report.title = "Blablabla"
+def pytest_html_report_title(report):
+    report.title = "Sousedemo"
+
+@pytest.hookimpl(hookwrapper=True)
+def pytest_runtest_makereport(item, call):
+    pytest_html = item.config.pluginmanager.getplugin("html")
+    outcome = yield
+    report = outcome.get_result()
+    extra = getattr(report, "extra", [])
+    if report.when == "call":
+        extra.append(pytest_html.extras.url(driver.current_url))
+        xfail = hasattr(report, "wasxfail")
+        if (report.skipped and xfail) or (report.failed and not xfail):
+            # test_name = os.environ.get('PYTEST_CURRENT_TEST').split(':')[-1].split(' ')[0]
+            screenshot = driver.get_screenshot_as_base64()
+            extra.append(pytest_html.extras.image(screenshot, ''))
+        report.extra = extra
