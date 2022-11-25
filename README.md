@@ -38,7 +38,7 @@ ___
 
     pytest -n auto OR pytest -n 5( any number)
     
-⬆️<sup>(back to [table of contents](#table-of-contents))</sup>
+⬆️(back to [Menu](#table-of-contents))
 ___
 # POETRY<a name="some-poetry"></a> 
 #### WEB с дополнительной информацией &middot;[![poetry](https://img.shields.io/badge/poetry-website-brightgreen.svg?style=flat-square)](https://python-poetry.org/docs/)
@@ -55,7 +55,7 @@ ___
   
     poetry run pytest test_name.py --setup-show -sv 
     
-⬆️<sup>(back to [table of contents](#table-of-contents))</sup>
+⬆️(back to [Menu](#table-of-contents))
 ___
 # PYTHON_HTML_REPORT <a name="some-html"></a>
 #### WEB с дополнительной информацией &middot;[![pytest-html](https://img.shields.io/badge/pyhtml-website-brightgreen.svg?style=flat-square)](https://pytest-html.readthedocs.io/en/latest/user_guide.html)
@@ -73,7 +73,7 @@ ___
 ##### right click to file > open in browser or in finder  
 ##### report.html - the name of the file, it can be anything
 
-⬆️<sup>(back to [table of contents](#table-of-contents))</sup>
+⬆️<sup>(back to [Menu](#table-of-contents))</sup>
 ___
 # ALLURE <a name="some-allure"></a>
 #### WEB с дополнительной информацией &middot;[![WEB-SITE](https://img.shields.io/badge/allure-website-brightgreen.svg?style=flat-square)](https://docs.qameta.io/allure/#_pytest)
@@ -134,4 +134,4 @@ ___
 👉[Allure-combine](https://pypi.org/project/allure-combine/)
 
 
-⬆️ <sup>(back to [table of contents](#table-of-contents))</sup>
+⬆️ <sup>(back to [Menu](#table-of-contents))</sup>
