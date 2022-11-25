@@ -100,7 +100,7 @@ class InventoryPageLocators:
     )
     # Fleece Jacket locators
     FLEECE_JACKET_LINK = (By.ID, "item_5_title_link")
-    FLEECE_JACKET_LABEL = (By.ID, "#item_5_title_link .inventory_item_name")
+    FLEECE_JACKET_LABEL = (By.CSS_SELECTOR, "#item_5_title_link .inventory_item_name")
     FLEECE_JACKET_IMG = (By.XPATH, "//a[@id='item_5_img_link']//img")
     FLEECE_JACKET_ADD_BTN = (By.ID, "add-to-cart-sauce-labs-fleece-jacket")
     FLEECE_JACKET_REMOVE_BTN = (By.ID, "remove-sauce-labs-fleece-jacket")
@@ -114,7 +114,7 @@ class InventoryPageLocators:
     )
     # Onesie locators
     ONESIE_LINK = (By.ID, "item_2_title_link")
-    ONESIE_LABEL = (By.ID, "#item_2_title_link .inventory_item_name")
+    ONESIE_LABEL = (By.CSS_SELECTOR, "#item_2_title_link .inventory_item_name")
     ONESIE_IMG = (By.XPATH, "//a[@id='item_2_img_link']//img")
     ONESIE_ADD_BTN = (By.ID, "add-to-cart-sauce-labs-onesie")
     ONESIE_REMOVE_BTN = (By.ID, "remove-sauce-labs-onesie")
