@@ -85,3 +85,10 @@ class InventoryPage(BasePage):
     def go_back_from_itempage_to_inventorypage(self):
         self.d.find_element(*InventoryItemPageLocator.BACK_TO_PRODUCKS_BTN).click()
         assert self.element_is_present(*InventoryPageLocators.CART_BTN)
+
+    def add_item_to_cart(self, *args):
+        count = 0
+        for item in args:
+            self.d.find_element(*item).click()
+            count += 1
+        assert str(count) in self.d.find_element(*InventoryPageLocators.CART_BADGE).text
