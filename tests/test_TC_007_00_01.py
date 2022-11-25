@@ -1,8 +1,8 @@
 from selenium.webdriver.common.by import By
-from pages.login_page import LoginPage
-from pages.inventory_page import InventoryPage
-from pages.cart_page import CartPage
-from pages.locators import (
+from ..pages.login_page import LoginPage
+from ..pages.inventory_page import InventoryPage
+from ..pages.cart_page import CartPage
+from ..pages.locators import (
     link,
     InventoryPageLocators,
     CartPageLocators,
