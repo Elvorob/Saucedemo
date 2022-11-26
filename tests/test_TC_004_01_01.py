@@ -3,6 +3,7 @@ from ..pages.inventory_page import *
 
 link_inv = "https://www.saucedemo.com/inventory.html"
 
+
 @pytest.mark.elina_abramova
 @pytest.mark.xfail
 def test_add_items(d, login_from_list):

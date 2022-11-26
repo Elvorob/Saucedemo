@@ -3,6 +3,7 @@ from ..pages.login_page import *
 
 link_Main = "https://www.saucedemo.com/"
 
+
 @pytest.mark.elina_abramova
 def test_signin_using_a_list_of_credentials(d, login_from_list):
     assert d.title == "Swag Labs"

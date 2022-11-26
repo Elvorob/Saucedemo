@@ -6,11 +6,11 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from .pages.locators import *
 
-'''
+"""
 -----------------------------------------------------
 ----------------- DRIVER SELECTION ------------------
 -----------------------------------------------------
-'''
+"""
 driver = None
 headless = True
 
@@ -19,7 +19,9 @@ def init_driver_chrome():
     o = webdriver.ChromeOptions()
     # o.add_argument("--window-size=1600,1080")
     o.headless = headless
-    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=o)
+    driver = webdriver.Chrome(
+        service=ChromeService(ChromeDriverManager().install()), options=o
+    )
     return driver
 
 
@@ -28,54 +30,58 @@ def init_driver_firefox():
     # o.add_argument("--width=1600")
     # o.add_argument("--height=1600")
     o.headless = headless
-    driver = webdriver.Chrome(service=FirefoxService(GeckoDriverManager().install()), options=o)
+    driver = webdriver.Chrome(
+        service=FirefoxService(GeckoDriverManager().install()), options=o
+    )
     return driver
 
 
-@pytest.fixture(params=['chrome', 'firefox'], scope='function', autouse=True)
+@pytest.fixture(params=["chrome", "firefox"], scope="function", autouse=True)
 def d(request):
     global driver
     if driver is not None:
         return driver
-    if request.param == 'chrome':
+    if request.param == "chrome":
         driver = init_driver_chrome()
-    elif request.param == 'firefox':
+    elif request.param == "firefox":
         driver = init_driver_firefox()
     else:
-        print('Please pass the correct browser name: {}'.format(request.param))
-        raise Exception('driver is not found')
+        print("Please pass the correct browser name: {}".format(request.param))
+        raise Exception("driver is not found")
 
     return driver
 
 
-'''
+"""
 -----------------------------------------------------
 --------------- Open and quit browser ---------------
 -----------------------------------------------------
-'''
+"""
 
-@pytest.fixture(scope='function', autouse=True)
+
+@pytest.fixture(scope="function", autouse=True)
 def print_browser(d):
-    print('\n---------Test started----------\n')
-    d.get('https://www.saucedemo.com/')
+    print("\n---------Test started----------\n")
+    d.get("https://www.saucedemo.com/")
     yield d
     d.quit()
-    print('\n---------Test ended-----------\n')
+    print("\n---------Test ended-----------\n")
 
-'''
+
+"""
 -----------------------------------------------------
 ---------------- HTML-Report Title ------------------
 -----------------------------------------------------
-'''
+"""
 
 # def pytest_html_report_title(report):
 #     report.title = "Saucedemo - Let's do it!"
 
-'''
+"""
 -----------------------------------------------------
 ---------- Add screenshots to report html -----------
 -----------------------------------------------------
-'''
+"""
 
 # @pytest.hookimpl(hookwrapper=True)
 # def pytest_runtest_makereport(item, call):
@@ -92,17 +98,21 @@ def print_browser(d):
 #             extra.append(pytest_html.extras.image(screenshot, ''))
 #         report.extra = extra
 
-'''
+"""
 -----------------------------------------------------
 ------------ Sign in with valid username ------------
 -----------------------------------------------------
-'''
-@pytest.fixture(params=['standard_user', "problem_user", "performance_glitch_user"],
-                scope='function')
+"""
+
+
+@pytest.fixture(
+    params=["standard_user", "problem_user", "performance_glitch_user"],
+    scope="function",
+)
 def login_from_list(d, request):
-    d.get('https://www.saucedemo.com/')
+    d.get("https://www.saucedemo.com/")
     d.find_element(*LoginPageLocators.USERNAME_INPUT).send_keys(request.param)
-    d.find_element(*LoginPageLocators.PASSWORD_INPUT).send_keys('secret_sauce')
+    d.find_element(*LoginPageLocators.PASSWORD_INPUT).send_keys("secret_sauce")
     d.find_element(*LoginPageLocators.LOGIN_BTN).click()
 
 
@@ -119,6 +129,3 @@ def correct_login(d):
     assert (
         d.current_url == "https://www.saucedemo.com/inventory.html"
     ), "____YOU NOT ENTER______"
-
-
-
