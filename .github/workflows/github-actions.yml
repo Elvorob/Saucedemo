@@ -1,5 +1,5 @@
 name: GitHub Actions Saucedemo
-on: [push, pull_request]
+on: [push]
 jobs:
   GitHub-Actions:
     runs-on: ubuntu-latest

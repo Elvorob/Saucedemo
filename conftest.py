@@ -2,10 +2,10 @@ import pytest
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service as ChromeService
-from .pages.locators import *
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.core.utils import ChromeType
+from .pages.locators import *
 
 
 """
@@ -13,7 +13,7 @@ from webdriver_manager.core.utils import ChromeType
 ----------------- DRIVER SELECTION ------------------
 -----------------------------------------------------
 """
-
+driver = None
 headless = True
 
 
