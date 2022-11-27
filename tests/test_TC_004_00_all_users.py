@@ -1,7 +1,7 @@
 from ..pages.locators import *
 
 
-def test_open_cart(d, correct_login):
+def test_open_cart_all_users(d, login_from_list):
     assert d.title == "Swag Labs", "NOT ENTER"
     d.find_element(*InventoryPageLocators.CART_BTN).click()
     assert d.current_url == "https://www.saucedemo.com/cart.html"
