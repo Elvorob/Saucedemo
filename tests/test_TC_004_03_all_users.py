@@ -5,6 +5,7 @@ from ..pages.cart_page import *
 link_inv = "https://www.saucedemo.com/inventory.html"
 link_Cart = "https://www.saucedemo.com/cart.html"
 
+
 @pytest.mark.elina_abramova
 @pytest.mark.xfail
 def test_remove_items_from_cart_on_cart_page(d, login_from_list):

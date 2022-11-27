@@ -16,6 +16,7 @@ from webdriver_manager.core.utils import ChromeType
 
 headless = True
 
+
 @pytest.fixture(scope="class")
 def d(browser):
     if browser == "firefox":
@@ -54,6 +55,7 @@ def browser(request):
 --------------- Open and quit browser ---------------
 -----------------------------------------------------
 """
+
 
 @pytest.fixture(scope="class", autouse=True)
 def g(d):
@@ -94,17 +96,21 @@ def g(d):
 #             extra.append(pytest_html.extras.image(screenshot, ''))
 #         report.extra = extra
 
-'''
+"""
 -----------------------------------------------------
 ------------ Sign in with valid username ------------
 -----------------------------------------------------
-'''
-@pytest.fixture(params=['standard_user', "problem_user", "performance_glitch_user"],
-                scope='function')
+"""
+
+
+@pytest.fixture(
+    params=["standard_user", "problem_user", "performance_glitch_user"],
+    scope="function",
+)
 def login_from_list(d, request):
-    d.get('https://www.saucedemo.com/')
+    d.get("https://www.saucedemo.com/")
     d.find_element(*LoginPageLocators.USERNAME_INPUT).send_keys(request.param)
-    d.find_element(*LoginPageLocators.PASSWORD_INPUT).send_keys('secret_sauce')
+    d.find_element(*LoginPageLocators.PASSWORD_INPUT).send_keys("secret_sauce")
     d.find_element(*LoginPageLocators.LOGIN_BTN).click()
 
 
