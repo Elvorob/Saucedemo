@@ -11,3 +11,7 @@ class CartPage(BasePage):
 
     def click_icon_cart(self):
         self.d.find_element(*CartPageLocators.CART_ICON).click()
+
+    def go_to_the_cart(self):
+        self.d.find_element(*InventoryPageLocators.CART_BTN).click()
+        assert "cart" in self.d.current_url
