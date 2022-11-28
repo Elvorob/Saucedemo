@@ -6,7 +6,13 @@ from .locators import *
 class InventoryPage(BasePage):
     def add_to_cart_backpack_inventory_item(self):
         self.d.find_element(*InventoryPageLocators.BACKPACK_ADD_BTN).click()
-        assert "id=4" in self.d.current_url
+        # assert "id=4" in self.d.current_url
+
+    def add_to_cart_bike_lite_inventory_item(self):
+        self.d.find_element(*InventoryPageLocators.BIKELIGHT_ADD_BTN).click()
+
+    def add_to_cart_onesie_inventory_item(self):
+        self.d.find_element(*InventoryPageLocators.ONESIE_ADD_BTN).click()
 
     def add_to_cart_backpack_inventory(self):
         self.d.find_element(*InventoryPageLocators.BACKPACK_ADD_BTN).click()
@@ -85,3 +91,10 @@ class InventoryPage(BasePage):
     def go_back_from_itempage_to_inventorypage(self):
         self.d.find_element(*InventoryItemPageLocator.BACK_TO_PRODUCKS_BTN).click()
         assert self.element_is_present(*InventoryPageLocators.CART_BTN)
+
+    def add_item_to_cart(self, *args):
+        count = 0
+        for item in args:
+            self.d.find_element(*item).click()
+            count += 1
+        assert str(count) in self.d.find_element(*InventoryPageLocators.CART_BADGE).text

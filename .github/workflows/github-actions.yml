@@ -1,16 +1,16 @@
 name: GitHub Actions Saucedemo
-on: [push, pull_request]
+on: [push]
 jobs:
   GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout this repo
         uses: actions/checkout@v3
-      - name: Setup python
+      - name: Setup Python             #github actions marketplace > setup python
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
-      - name: Check code for errors by flake8 and format code with black
+      - name: Black and flake8          # >python lint>Python Code Quality and Lint
         uses: ricardochaves/python-lint@v1.4.0
         with:
           python-root-list: ""
@@ -28,6 +28,9 @@ jobs:
           extra-isort-options: ""
       - name: Update repo
         run: sudo apt-get update
+        #----------------------------------------------
+        #  -----  install browsers  -----
+        #----------------------------------------------
       - name: Install Chrome
         uses: browser-actions/setup-chrome@latest
       - name: Install Firefox
@@ -46,8 +49,39 @@ jobs:
         with:
           path: .venv
           key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
+
+      #----------------------------------------------
+      # install dependencies if cache does not exist
+      #----------------------------------------------
       - name: Install dependencies
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
         run: poetry install --no-interaction --no-root
-      - name: Run pytest
-        run: poetry run pytest
+#      - name: Run pytest
+#        run: poetry run pytest
+      - name: Install project
+        run: poetry install --no-interaction
+      #----------------------------------------------
+      #              run test suite
+      #----------------------------------------------
+      - name: Run tests
+        run: |
+          source .venv/bin/activate
+          pytest tests/ --junitxml report.xml
+      - name: Create test summary
+        uses: test-summary/action@v2.0
+        with:
+          paths: report.xml
+        if: always()
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        if: always()
+        with:
+          junit_files: "report.xml"
+      #----------------------------------------------
+      #              save report for download
+      #----------------------------------------------
+      - name: Upload report using artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: report
+          path: /home/runner/work/Saucedemo_05/Saucedemo_05/report/
