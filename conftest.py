@@ -19,6 +19,8 @@ headless = True
 
 @pytest.fixture(scope="class")
 def d(browser):
+    global driver
+    global headless
     if browser == "firefox":
         o = webdriver.FirefoxOptions()
         o.headless = headless
