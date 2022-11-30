@@ -11,10 +11,16 @@ from webdriver_manager.core.utils import ChromeType
 @pytest.fixture(scope="function")
 def correct_login(d):
     d.get("https://www.saucedemo.com/")
-    d.find_element(*LoginPageLocators.USERNAME_INPUT).send_keys(LoginPageLocators.USER_NAME)
-    d.find_element(*LoginPageLocators.PASSWORD_INPUT).send_keys(LoginPageLocators.PASSWORD)
+    d.find_element(*LoginPageLocators.USERNAME_INPUT).send_keys(
+        LoginPageLocators.USER_NAME
+    )
+    d.find_element(*LoginPageLocators.PASSWORD_INPUT).send_keys(
+        LoginPageLocators.PASSWORD
+    )
     d.find_element(*LoginPageLocators.LOGIN_BTN).click()
-    assert (d.current_url == "https://www.saucedemo.com/inventory.html"), "____YOU NOT ENTER______"
+    assert (
+        d.current_url == "https://www.saucedemo.com/inventory.html"
+    ), "____YOU NOT ENTER______"
 
 
 @pytest.fixture(scope="class")
@@ -58,6 +64,7 @@ def g(d):
     yield d
     d.quit()
     print("\n***** end fixture = teardown *****\n")
+
 
 # --------- указывать другое имя для отчетов.
 # --------- По умолчанию название report.html
