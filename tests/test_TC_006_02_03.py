@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-from pages.locators import InventoryPageLocators
+from ..pages.locators import InventoryPageLocators
 
 
 def test_cart_page_copywriter(d, correct_login):
