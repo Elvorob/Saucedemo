@@ -7,4 +7,3 @@ def test_open_cart_all_users(d, login_from_list):
     assert d.current_url == "https://www.saucedemo.com/cart.html"
     d.find_element(*CartPageLocators.CONTINUE_SHOPPING).click()
     assert d.title == "Swag Labs", "____You NOT LEFT_____"
-    d.quit()
