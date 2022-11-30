@@ -15,3 +15,9 @@ class CartPage(BasePage):
     def go_to_the_cart(self):
         self.d.find_element(*InventoryPageLocators.CART_BTN).click()
         assert "cart" in self.d.current_url
+
+    def chackout_order_with_empty_cart(self):
+        self.d.find_element(*CartPageLocators.BT_CHECKOUT).click()
+        assert (
+            "checkout-step-one" not in self.d.current_url
+        ), "You on Checkout page with EMPTY CART"

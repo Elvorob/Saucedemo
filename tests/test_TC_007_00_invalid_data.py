@@ -20,7 +20,7 @@ link_checkout = "https://www.saucedemo.com/checkout-step-one.html"
     ],
 )
 @pytest.mark.elina_abramova
-def test_negativ_signin(d, login_from_list, firstname, lastname, zip):
+def test_negativ_checkout_data(d, login_from_list, firstname, lastname, zip):
     page = InventoryPage(d, link_inv)
     page.add_to_cart_backpack_inventory_item()
     page.add_to_cart_bike_lite_inventory_item()
