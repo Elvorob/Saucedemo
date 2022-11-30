@@ -187,3 +187,9 @@ class CheckoutPageLocators:
     CANCEL = (By.ID, "cancel")
     CONTINUE = (By.ID, "continue")
     FINISH = (By.ID, "finish")
+
+
+class Widgets:
+    FB_WIDGET_ALL_PAGES = (By.XPATH, '//a[contains(text(),"Facebook")]')
+    TWITTER_WIDGET_ALL_PAGES = (By.XPATH, '//a[contains(text(),"Twitter")]')
+    LINKEDIN_WIDGET_ALL_PAGES = (By.XPATH, '//a[contains(text(),"LinkedIn")]')
