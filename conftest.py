@@ -19,7 +19,7 @@ def correct_login(d):
     )
     d.find_element(*LoginPageLocators.LOGIN_BTN).click()
     assert (
-        d.current_url == "https://www.saucedemo.com/inventory.html"
+            d.current_url == "https://www.saucedemo.com/inventory.html"
     ), "____YOU NOT ENTER______"
 
 
@@ -33,7 +33,7 @@ def d(browser):
         )
     else:
         o = webdriver.ChromeOptions()
-        o.headless = True
+        o.headless = False
         driver = webdriver.Chrome(
             service=ChromeService(ChromeDriverManager().install()), options=o
         )
@@ -70,3 +70,4 @@ def g(d):
 # --------- По умолчанию название report.html
 # def pytest_html_report_title(report):
 #     report.title = "Blablabla"
+

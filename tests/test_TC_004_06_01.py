@@ -2,7 +2,7 @@ from ..pages.cart_page import *
 from ..pages.locators import CheckoutPageLocators
 
 
-def test_change_qty(d, correct_login):
+def test_finish_shopping(d, correct_login):
     d.find_element(By.ID, "add-to-cart-test.allthethings()-t-shirt-(red)").click()
     cart = CartPage(d, link)
     cart.click_icon_cart()
