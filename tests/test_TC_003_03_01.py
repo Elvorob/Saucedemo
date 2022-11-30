@@ -15,7 +15,7 @@ def test_compare_item_desc(d, correct_login):
     get_desc_card = d.find_element(
         *InventoryItemPageLocator.INVENTORY_ITMEM_DESCRIPTION
     ).text
-    assert get_desc_list != get_desc_card, "Item description !ARE NOT! the same"
+    assert get_desc_list == get_desc_card, "Item description !ARE NOT! the same"
 
 
 def test_compare_item_price(d, correct_login):
