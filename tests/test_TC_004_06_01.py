@@ -6,8 +6,7 @@ def test_finish_shopping(d, correct_login):
     d.find_element(By.ID, "add-to-cart-test.allthethings()-t-shirt-(red)").click()
     cart = CartPage(d, link)
     cart.click_icon_cart()
-    d.find_element(By.XPATH,
-        "/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/div[1]",).click()
+    d.find_element(By.XPATH, "/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/div[1]",).click()
     d.find_element(*CartPageLocators.BT_CHECKOUT).click()
     page_ch_you_inf = d.find_element(By.XPATH, "//span[contains(text(),'Checkout: Your Information')]")
     assert page_ch_you_inf.text == "CHECKOUT: YOUR INFORMATION", "Page not found!!!"
