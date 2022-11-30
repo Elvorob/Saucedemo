@@ -15,15 +15,13 @@ def test_finish_shopping(d, correct_login):
         By.XPATH, "//span[contains(text(),'Checkout: Your Information')]"
     )
     assert page_ch_you_inf.text == "CHECKOUT: YOUR INFORMATION", "Page not found!!!"
-
     d.find_element(*CheckoutPageLocators.FIRS_NAME).send_keys("Test_user")
     d.find_element(*CheckoutPageLocators.LAST_NAME).send_keys("Test_password")
     d.find_element(*CheckoutPageLocators.ZIP_P_CODE).send_keys("43250")
     d.find_element(*CheckoutPageLocators.CONTINUE).click()
     assert (
-        d.current_url == "https://www.saucedemo.com/checkout-step-two.html"
+            d.current_url == "https://www.saucedemo.com/checkout-step-two.html"
     ), "Not Found"
-
     d.find_element(*CheckoutPageLocators.FINISH).click()
     complete_message_text = d.find_element(
         By.XPATH, '//*[@id="checkout_complete_container"]/h2'
@@ -33,5 +31,5 @@ def test_finish_shopping(d, correct_login):
     print("______THANKS FOR YOUR ORDER_____")
     d.find_element(By.ID, "back-to-products").click()
     assert (
-        d.current_url == "https://www.saucedemo.com/inventory.html"
+            d.current_url == "https://www.saucedemo.com/inventory.html"
     ), "Page Not Found!!!"
