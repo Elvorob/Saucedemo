@@ -13,7 +13,7 @@ link_checkout = "https://www.saucedemo.com/checkout-step-one.html"
 
 @pytest.mark.elina_abramova
 # @pytest.mark.xfail
-def test_checkout(d, correct_login):
+def test_checkout(d, login_from_list):
     page = InventoryPage(d, link_inv)
     page.add_to_cart_backpack_inventory_item()
     page.add_to_cart_bike_lite_inventory_item()
