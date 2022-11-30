@@ -74,14 +74,17 @@ def g(d):
 -----------------------------------------------------
 """
 
+
 def pytest_html_report_title(report):
     report.title = "Saucedemo - Let's do it!"
+
 
 """
 -----------------------------------------------------
 ---------- Add screenshots to report html -----------
 -----------------------------------------------------
 """
+
 
 @pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_makereport(item, call):
@@ -95,8 +98,9 @@ def pytest_runtest_makereport(item, call):
         if (report.skipped and xfail) or (report.failed and not xfail):
             # test_name = os.environ.get('PYTEST_CURRENT_TEST').split(':')[-1].split(' ')[0]
             screenshot = driver.get_screenshot_as_base64()
-            extra.append(pytest_html.extras.image(screenshot, ''))
+            extra.append(pytest_html.extras.image(screenshot, ""))
         report.extra = extra
+
 
 """
 -----------------------------------------------------
