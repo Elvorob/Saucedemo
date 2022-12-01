@@ -127,12 +127,8 @@ def login_from_list(d, request):
 @pytest.fixture(scope="function")
 def correct_login(d):
     d.get("https://www.saucedemo.com/")
-    d.find_element(*LoginPageLocators.USERNAME_INPUT).send_keys(
-        USER_NAME_STANDARD
-    )
-    d.find_element(*LoginPageLocators.PASSWORD_INPUT).send_keys(
-        PASSWORD
-    )
+    d.find_element(*LoginPageLocators.USERNAME_INPUT).send_keys(USER_NAME_STANDARD)
+    d.find_element(*LoginPageLocators.PASSWORD_INPUT).send_keys(PASSWORD)
     d.find_element(*LoginPageLocators.LOGIN_BTN).click()
     time.sleep(2)
     assert (

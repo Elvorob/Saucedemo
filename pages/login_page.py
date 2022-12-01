@@ -56,9 +56,7 @@ class LoginPage(BasePage):
         self.d.find_element(*LoginPageLocators.USERNAME_INPUT).send_keys(
             USER_NAME_STANDARD
         )
-        self.d.find_element(*LoginPageLocators.PASSWORD_INPUT).send_keys(
-            PASSWORD
-        )
+        self.d.find_element(*LoginPageLocators.PASSWORD_INPUT).send_keys(PASSWORD)
         self.d.find_element(*LoginPageLocators.LOGIN_BTN).click()
 
     def user_is_not_authorized(self):
