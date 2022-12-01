@@ -5,15 +5,16 @@ link = "https://www.saucedemo.com/"
 
 class InventoryPageLocators:
     CART_BADGE = (By.CSS_SELECTOR, ".shopping_cart_badge")
-    APPER_LOGO = (By.XPATH, "//div[@id='root']//div[@class='app_logo']")
     CART_BTN = (By.ID, "shopping_cart_container")
+    INVENTORY_ITEMS = (By.CLASS_NAME, "inventory_item_name")
     PRODUCTS_TITLE = (By.XPATH, '//div[@id="header_container"]//span[@class="title"]')
-    UPPER_ROBOT_LOGO = (By.XPATH, "UPPER_ROBOT_LOGO")
     SORT_MENU_BUTTON = (By.CSS_SELECTOR, ".product_sort_container")
     SORT_OPTION_BUTTON_AZ = (By.XPATH, "//option[@value='az']")
     SORT_OPTION_BUTTON_ZA = (By.XPATH, "//option[@value='za']")
     SORT_OPTION_BUTTON_LOWHIGH = (By.XPATH, "//option[@value='lohi']")
     SORT_OPTION_BUTTON_HIGHLOW = (By.XPATH, "//option[@value='hilo']")
+    UPPER_LOGO = (By.XPATH, "//div[@id='root']//div[@class='app_logo']")
+    UPPER_ROBOT_LOGO = (By.XPATH, "UPPER_ROBOT_LOGO")
     # burger menu locators
     BURGER_BTN = (By.ID, "react-burger-menu-btn")
     BURGER_MENU_ALL_ITEMS_BTN = (By.ID, "inventory_sidebar_link")
@@ -134,8 +135,6 @@ class LoginPageLocators:
     PASSWORD_INPUT = (By.ID, "password")
     LOGIN_BOX = (By.CLASS_NAME, "login-box")
     MESSAGE_EPIC_SADFACE = (By.XPATH, "//*[contains(text(), 'Epic sadface')]")
-    USER_NAME = "standard_user"
-    PASSWORD = "secret_sauce"
 
 
 class InventoryItemPageLocator:

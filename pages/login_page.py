@@ -1,5 +1,8 @@
+import time
+
 from selenium.webdriver.common.by import By
 from .base_page import BasePage
+from .const import *
 from .locators import LoginPageLocators
 
 
@@ -26,6 +29,7 @@ class LoginPage(BasePage):
         self.d.find_element(*LoginPageLocators.USERNAME_INPUT).send_keys(login)
         self.d.find_element(*LoginPageLocators.PASSWORD_INPUT).send_keys(password)
         self.d.find_element(*LoginPageLocators.LOGIN_BTN).click()
+        time.sleep(2)
 
     def should_go_on_product_page(self):
         assert "inventory" in self.d.current_url
@@ -50,10 +54,10 @@ class LoginPage(BasePage):
     def login_password(self):
         self.d.get("https://www.saucedemo.com/")
         self.d.find_element(*LoginPageLocators.USERNAME_INPUT).send_keys(
-            *LoginPageLocators.USER_NAME
+            USER_NAME_STANDARD
         )
         self.d.find_element(*LoginPageLocators.PASSWORD_INPUT).send_keys(
-            *LoginPageLocators.PASSWORD
+            PASSWORD
         )
         self.d.find_element(*LoginPageLocators.LOGIN_BTN).click()
 

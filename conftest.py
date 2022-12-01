@@ -1,3 +1,5 @@
+import time
+
 import pytest
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
@@ -5,6 +7,7 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.core.utils import ChromeType
+from .pages.const import *
 from .pages.locators import *
 
 
@@ -116,20 +119,22 @@ def pytest_runtest_makereport(item, call):
 def login_from_list(d, request):
     d.get("https://www.saucedemo.com/")
     d.find_element(*LoginPageLocators.USERNAME_INPUT).send_keys(request.param)
-    d.find_element(*LoginPageLocators.PASSWORD_INPUT).send_keys("secret_sauce")
+    d.find_element(*LoginPageLocators.PASSWORD_INPUT).send_keys(PASSWORD)
     d.find_element(*LoginPageLocators.LOGIN_BTN).click()
+    time.sleep(2)
 
 
 @pytest.fixture(scope="function")
 def correct_login(d):
     d.get("https://www.saucedemo.com/")
     d.find_element(*LoginPageLocators.USERNAME_INPUT).send_keys(
-        LoginPageLocators.USER_NAME
+        USER_NAME_STANDARD
     )
     d.find_element(*LoginPageLocators.PASSWORD_INPUT).send_keys(
-        LoginPageLocators.PASSWORD
+        PASSWORD
     )
     d.find_element(*LoginPageLocators.LOGIN_BTN).click()
+    time.sleep(2)
     assert (
         d.current_url == "https://www.saucedemo.com/inventory.html"
     ), "____YOU NOT ENTER______"

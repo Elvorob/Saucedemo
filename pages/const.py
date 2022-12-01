@@ -1,0 +1,8 @@
+LINK_MAIN = "https://www.saucedemo.com/"
+LINK_CART = f"{LINK_MAIN}cart.html"
+LINK_CHECKOUT_STEP_ONE = f"{LINK_MAIN}checkout-step-one.html"
+LINK_INVENTORY = f"{LINK_MAIN}inventory.html"
+PASSWORD = "secret_sauce"
+USER_NAME_INVALID = "abrakadabra_user"
+USER_NAME_PERFORMANCE_GLITCH = "performance_glitch_user"
+USER_NAME_STANDARD = "standard_user"
