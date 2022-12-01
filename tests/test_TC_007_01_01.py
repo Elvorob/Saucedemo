@@ -26,6 +26,7 @@ from ..pages.locators import (
     InventoryPageLocators,
 )
 
+
 def test_cancel_checkout(d):
     page = LoginPage(d, LINK_MAIN)
     page.signin_standart_user(login=USER_NAME_STANDARD, password=PASSWORD)
