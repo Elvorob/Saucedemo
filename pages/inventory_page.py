@@ -1,4 +1,7 @@
 import time
+
+from selenium.common import NoSuchElementException
+
 from .base_page import BasePage
 from .locators import *
 
@@ -98,3 +101,34 @@ class InventoryPage(BasePage):
             self.d.find_element(*item).click()
             count += 1
         assert str(count) in self.d.find_element(*InventoryPageLocators.CART_BADGE).text
+
+    def add_items_to_cart_for_few_users(self):
+        """добавляем исключение из-за бага с мигрирующей корзиной"""
+        try:
+            self.add_to_cart_backpack_inventory_item()
+            self.add_to_cart_bike_lite_inventory_item()
+            self.add_to_cart_onesie_inventory_item()
+        except NoSuchElementException:
+            removebtns = self.d.find_elements(
+                By.XPATH, "//*[contains(text(), 'Remove')]"
+            )
+            print(removebtns)
+            for item in removebtns:
+                item.click()
+            self.add_to_cart_backpack_inventory_item()
+            self.add_to_cart_bike_lite_inventory_item()
+            self.add_to_cart_onesie_inventory_item()
+
+    def add_backpack_for_few_users(self):
+        """добавляем исключение из-за бага с мигрирующей корзиной"""
+        try:
+            self.d.find_element(*InventoryPageLocators.BACKPACK_ADD_BTN).click()
+            self.d.find_element(*InventoryPageLocators.CART_BTN).click()
+            assert "cart" in self.d.current_url
+            assert (
+                "Sauce Labs Backpack"
+                in self.d.find_element(*InventoryPageLocators.BACKPACK_LABEL).text
+            )
+        except NoSuchElementException:
+            self.d.find_element(By.XPATH, "//*[contains(text(), 'Remove')]").click()
+            self.add_to_cart_backpack_inventory_item()

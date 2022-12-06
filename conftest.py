@@ -17,39 +17,80 @@ driver = None
 headless = True
 
 
-@pytest.fixture(scope="class")
-def d(browser):
-    global driver
-    global headless
-    if browser == "firefox":
-        o = webdriver.FirefoxOptions()
-        o.headless = headless
-        driver = webdriver.Firefox(
-            service=FirefoxService(GeckoDriverManager().install()), options=o
-        )
-    else:
-        o = webdriver.ChromeOptions()
-        o.headless = headless
-        driver = webdriver.Chrome(
-            service=ChromeService(ChromeDriverManager().install()), options=o
-        )
+def init_driver_chrome():
+    o = webdriver.ChromeOptions()
+    # o.add_argument("--window-size=1600,1080")
+    o.headless = headless
+    driver = webdriver.Chrome(
+        service=ChromeService(ChromeDriverManager().install()), options=o
+    )
     return driver
 
 
-# ------- 2 функции определяют параметр, котрый принимает pytest (browser)
-def pytest_addoption(parser):
-    parser.addoption(
-        "--browser",
-        default="chrome",
-        help="define browser: chrome or firefox, --firefox",
+def init_driver_firefox():
+    o = webdriver.FirefoxOptions()
+    # o.add_argument("--width=1600")
+    # o.add_argument("--height=1600")
+    o.headless = headless
+    driver = webdriver.Chrome(
+        service=FirefoxService(GeckoDriverManager().install()), options=o
     )
+    return driver
 
 
-# ------- browser сами назвали так параметр
-# ------- default - что будет запускаться по умолчанию
-@pytest.fixture(scope="class")
-def browser(request):
-    return request.config.getoption("--browser")
+@pytest.fixture(params=["chrome", "firefox"], scope="function", autouse=True)
+def d(request):
+    global driver
+    if driver is not None:
+        return driver
+    if request.param == "chrome":
+        driver = init_driver_chrome()
+    elif request.param == "firefox":
+        driver = init_driver_firefox()
+    else:
+        print("Please pass the correct browser name: {}".format(request.param))
+        raise Exception("driver is not found")
+
+    return driver
+
+
+# driver = None
+# headless = True
+#
+#
+# @pytest.fixture(scope="class")
+# def d(browser):
+#     global driver
+#     global headless
+#     if browser == "firefox":
+#         o = webdriver.FirefoxOptions()
+#         o.headless = headless
+#         driver = webdriver.Firefox(
+#             service=FirefoxService(GeckoDriverManager().install()), options=o
+#         )
+#     else:
+#         o = webdriver.ChromeOptions()
+#         o.headless = headless
+#         driver = webdriver.Chrome(
+#             service=ChromeService(ChromeDriverManager().install()), options=o
+#         )
+#     return driver
+#
+#
+# # ------- 2 функции определяют параметр, котрый принимает pytest (browser)
+# def pytest_addoption(parser):
+#     parser.addoption(
+#         "--browser",
+#         default="chrome",
+#         help="define browser: chrome or firefox, --firefox",
+#     )
+#
+#
+# # ------- browser сами назвали так параметр
+# # ------- default - что будет запускаться по умолчанию
+# @pytest.fixture(scope="class")
+# def browser(request):
+#     return request.config.getoption("--browser")
 
 
 """
@@ -59,12 +100,12 @@ def browser(request):
 """
 
 
-@pytest.fixture(scope="class", autouse=True)
+@pytest.fixture(scope="function", autouse=True)
 def g(d):
     print("\n***** start fixture = setup *****\n")
     d.get("https://www.saucedemo.com/")
     yield d
-    d.quit()
+    # d.quit()
     print("\n***** end fixture = teardown *****\n")
 
 
@@ -110,7 +151,11 @@ def pytest_runtest_makereport(item, call):
 
 
 @pytest.fixture(
-    params=["standard_user", "problem_user", "performance_glitch_user"],
+    params=[
+        "standard_user",
+        pytest.param("problem_user", marks=pytest.mark.xfail),
+        "performance_glitch_user",
+    ],
     scope="function",
 )
 def login_from_list(d, request):
