@@ -12,10 +12,8 @@ def test_product_cart_new_window(d):
 
     achains = ActionChains(d)
     backpack = d.find_element(*InventoryPageLocators.BACKPACK_LINK).click()
-    # make right click
     achains.context_click(backpack).perform()
-    d.implicitly_wait(1)
-    # choose in context menu "open in new window"
+    d.implicitly_wait(2)
     achains.context_click(backpack).send_keys(Keys.ARROW_DOWN).send_keys(
         Keys.RETURN
     ).perform()
