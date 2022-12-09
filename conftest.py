@@ -32,7 +32,7 @@ def init_driver_firefox():
     # o.add_argument("--width=1600")
     # o.add_argument("--height=1600")
     o.headless = headless
-    driver = webdriver.Chrome(
+    driver = webdriver.Firefox(
         service=FirefoxService(GeckoDriverManager().install()), options=o
     )
     return driver
@@ -41,8 +41,8 @@ def init_driver_firefox():
 @pytest.fixture(params=["chrome", "firefox"], scope="function", autouse=True)
 def d(request):
     global driver
-    if driver is not None:
-        return driver
+    # if driver is not None:
+    #     return driver
     if request.param == "chrome":
         driver = init_driver_chrome()
     elif request.param == "firefox":
@@ -105,7 +105,7 @@ def g(d):
     print("\n***** start fixture = setup *****\n")
     d.get("https://www.saucedemo.com/")
     yield d
-    # d.quit()
+    d.quit()
     print("\n***** end fixture = teardown *****\n")
 
 

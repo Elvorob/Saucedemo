@@ -11,7 +11,9 @@ from ..pages.checkout_page import *
 
 def test_about_page_all_users(d, login_from_list):
     d.find_element(*InventoryPageLocators.BURGER_BTN).click()
+    time.sleep(1)
     d.find_element(*InventoryPageLocators.BURGER_MENU_ABOUT_BTN).click()
+    time.sleep(1)
     assert d.current_url == "https://saucelabs.com/"
 
 
@@ -28,6 +30,7 @@ def test_reset_app(d, correct_login):
 
 def test_widget_FB(d, correct_login):
     d.find_element(By.XPATH, '//a[contains(text(),"Facebook")]').click()
+    time.sleep(1)
     handles = d.window_handles
     d.switch_to.window(handles[1])
     url = d.current_url

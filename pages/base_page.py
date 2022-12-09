@@ -1,4 +1,8 @@
+import time
+
 from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.chrome import webdriver
+
 from .locators import *
 
 
@@ -41,9 +45,15 @@ class BasePage:
         for loc, urls, urle in self.widgets:
             self.d.find_element(*loc).click()
             handles = self.d.window_handles
-            self.d.switch_to.window(handles[n])
+            # print(self.d.capabilities)
+            if self.d.capabilities['browserName'] == 'firefox':
+                self.d.switch_to.window(handles[1])
+            else:
+                self.d.switch_to.window(handles[n])
+            time.sleep(2)
             assert (
                 urls in self.d.current_url and urle in self.d.current_url
             ), "you are NOT on correct widget page"
             self.d.switch_to.window(handles[0])
+            time.sleep(2)
             n += 1
