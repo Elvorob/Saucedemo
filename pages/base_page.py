@@ -43,7 +43,7 @@ class BasePage:
             handles = self.d.window_handles
             self.d.switch_to.window(handles[n])
             assert (
-                urls in self.d.current_url and urle in self.d.current_url
+                    urls in self.d.current_url and urle in self.d.current_url
             ), "you are NOT on correct widget page"
             self.d.switch_to.window(handles[0])
             n += 1

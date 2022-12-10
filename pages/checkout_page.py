@@ -8,6 +8,7 @@ class CheckoutPage(BasePage):
         self.d.find_element(*CheckoutPageLocators.LAST_NAME).send_keys(lastname)
         self.d.find_element(*CheckoutPageLocators.ZIP_P_CODE).send_keys(zip)
         self.d.find_element(*CheckoutPageLocators.CONTINUE).click()
+
     def back_home(self):
         self.d.find_element(*CheckoutPageLocators.BACK_T_PROD).click()
         assert (

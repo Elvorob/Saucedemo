@@ -181,6 +181,7 @@ class CartPageLocators:
     BT_CHECKOUT = (By.ID, "checkout")
     CONTINUE_SHOPPING = (By.ID, "continue-shopping")
     CART_QUANTITY = (By.ID, "//div[@class='cart_quantity']")
+    INVEN_ITEM_NAME = (By.CLASS_NAME, 'inventory_item_name')
 
 
 class CheckoutPageLocators:
@@ -191,13 +192,11 @@ class CheckoutPageLocators:
     CONTINUE = (By.ID, "continue")
     FINISH = (By.ID, "finish")
     BACK_T_PROD = (By.ID, "back-to-products")
-            #Message/title/links
-    ERROR_MSG =(By.CLASS_NAME, "error-message-container")
+    ERROR_MSG = (By.CLASS_NAME, "error-message-container")
     HEADER_THX = (By.XPATH, '//*[@class="complete-header"]')
     MSS_THXY = "THANK YOU FOR YOUR ORDER"
     TITLE_YOU_INFO = (By.XPATH, "//span[@class='title']")
     OVERVIEW_LINK = "https://www.saucedemo.com/checkout-step-two.html"
-
 
 
 class Widgets:
@@ -207,8 +206,7 @@ class Widgets:
 
 
 class Copywriter:
-    FOOTER_COPY=(By.CLASS_NAME, "footer_copy")
+    FOOTER_COPY = (By.CLASS_NAME, "footer_copy")
     IMG_ROBOT = (By.CLASS_NAME, "footer_robot")
     FOOTER = (By.TAG_NAME, "footer")
     MSG = "© 2022 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy"
-
