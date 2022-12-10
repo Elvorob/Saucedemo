@@ -1,20 +1,15 @@
-from selenium.webdriver.common.by import By
-from ..pages.locators import InventoryPageLocators
+from ..pages.locators import InventoryPageLocators, Copywriter
 
 
 def test_cart_page_copywriter(d, correct_login):
     d.find_element(*InventoryPageLocators.CART_BTN).click()
-    d.find_element(By.CLASS_NAME, "app_logo").click()
+    # have a logo
+    d.find_element(*InventoryPageLocators.APPER_LOGO).click()
     assert d.title == "Swag Labs", "NOT FOUNDED"
-    a = d.find_element(By.CLASS_NAME, "footer_copy")
-    assert (
-        a.text
-        == "© 2022 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy"
-    ), "copywriter NOT FOUND"
-    img = d.find_element(
-        By.XPATH, '//body/div[@id="root"]/div[@id="page_wrapper"]/footer[1]/img[1]'
-    )
-    if "ng-hide" in img.get_attribute("class"):
-        print("Image is not visible on screen")
-    else:
-        print("Image is visible on screen")
+    # Have a copywriter Privacy Policy
+    a = d.find_element(*Copywriter.FOOTER_COPY)
+    mms = Copywriter()
+    assert (a.text == mms.MSG), "copywriter NOT FOUND"
+    # Have img a robot
+    assert d.find_element(*Copywriter.IMG_ROBOT).is_displayed(),"ING NOT FOUND"
+

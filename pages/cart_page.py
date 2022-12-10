@@ -1,5 +1,5 @@
-from .locators import *
-from .base_page import *
+from .locators import CartPageLocators, InventoryPageLocators
+from .base_page import BasePage
 
 
 class CartPage(BasePage):

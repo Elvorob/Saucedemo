@@ -19,7 +19,9 @@ class InventoryPageLocators:
     BURGER_MENU_ALL_ITEMS_BTN = (By.ID, "inventory_sidebar_link")
     BURGER_MENU_ABOUT_BTN = (By.ID, "about_sidebar_link")
     BURGER_MENU_LOGOUT_BTN = (By.ID, "logout_sidebar_link")
-    BURGER_MENU_RESER_APP_STATE_BTN = (By.ID, "reset_sidebar_link")
+    MENU_RESET = (By.ID, "reset_sidebar_link")
+    CROSS_BTN = (By.ID, "react-burger-cross-btn")
+    BURGER_LIST = (By.CLASS_NAME, "bm-item-list")
     # Sort menu locators Сортировка
     SORT_BTN = (By.XPATH, "//select[@class='product_sort_container']")
     ACTIVE_SORT_OPTION = (
@@ -178,6 +180,7 @@ class CartPageLocators:
     CART_ICON = (By.ID, "shopping_cart_container")
     BT_CHECKOUT = (By.ID, "checkout")
     CONTINUE_SHOPPING = (By.ID, "continue-shopping")
+    CART_QUANTITY = (By.ID, "//div[@class='cart_quantity']")
 
 
 class CheckoutPageLocators:
@@ -187,9 +190,25 @@ class CheckoutPageLocators:
     CANCEL = (By.ID, "cancel")
     CONTINUE = (By.ID, "continue")
     FINISH = (By.ID, "finish")
+    BACK_T_PROD = (By.ID, "back-to-products")
+            #Message/title/links
+    ERROR_MSG =(By.CLASS_NAME, "error-message-container")
+    HEADER_THX = (By.XPATH, '//*[@class="complete-header"]')
+    MSS_THXY = "THANK YOU FOR YOUR ORDER"
+    TITLE_YOU_INFO = (By.XPATH, "//span[@class='title']")
+    OVERVIEW_LINK = "https://www.saucedemo.com/checkout-step-two.html"
+
 
 
 class Widgets:
     FB_WIDGET_ALL_PAGES = (By.XPATH, '//a[contains(text(),"Facebook")]')
     TWITTER_WIDGET_ALL_PAGES = (By.XPATH, '//a[contains(text(),"Twitter")]')
     LINKEDIN_WIDGET_ALL_PAGES = (By.XPATH, '//a[contains(text(),"LinkedIn")]')
+
+
+class Copywriter:
+    FOOTER_COPY=(By.CLASS_NAME, "footer_copy")
+    IMG_ROBOT = (By.CLASS_NAME, "footer_robot")
+    FOOTER = (By.TAG_NAME, "footer")
+    MSG = "© 2022 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy"
+
