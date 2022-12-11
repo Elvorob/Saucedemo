@@ -1,7 +1,7 @@
 import pytest
 from selenium.webdriver.common.by import By
 
-from pages.locators import CartPageLocators
+from ..pages.locators import CartPageLocators
 from ..pages.inventory_page import InventoryPage
 from ..pages.cart_page import CartPage
 from ..pages.checkout_page import CheckoutPage
