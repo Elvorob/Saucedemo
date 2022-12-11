@@ -29,7 +29,7 @@ def d(browser):
         )
     else:
         o = webdriver.ChromeOptions()
-        o.headless = False
+        o.headless = headless
         driver = webdriver.Chrome(
             service=ChromeService(ChromeDriverManager().install()), options=o
         )
