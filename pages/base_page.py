@@ -31,8 +31,7 @@ class BasePage:
         self.widgets = [
             (Widgets.FB_WIDGET_ALL_PAGES, "https://www.facebook.com/", "saucelabs"),
             (Widgets.TWITTER_WIDGET_ALL_PAGES, "https://twitter.com/", "saucelabs"),
-            (Widgets.LINKEDIN_WIDGET_ALL_PAGES,"https://www.linkedin.com/","sauce-labs",),
-        ]
+            (Widgets.LINKEDIN_WIDGET_ALL_PAGES, "https://www.linkedin.com/", "sauce-labs",), ]
         n = 1
         for loc, urls, urle in self.widgets:
             self.d.find_element(*loc).click()
