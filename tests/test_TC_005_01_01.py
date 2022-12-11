@@ -15,4 +15,4 @@ def test_reset_app(d, correct_login):
     cross_btn = wait.until(EC.element_to_be_clickable(MENU_RESET))
     cross_btn.click()
     a = d.find_element(*CartPageLocators.REMOVE_ITEM_BTN).text
-    assert (a == "ADD TO CART"), "NOT RESET"
+    assert a == "ADD TO CART", "NOT RESET"
