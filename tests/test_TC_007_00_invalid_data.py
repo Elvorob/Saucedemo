@@ -31,9 +31,7 @@ def test_negativ_checkout_data(d, login_from_list, firstname, lastname, zip):
     page = CartPage(d, link_Cart)
     d.implicitly_wait(2)
     page.go_to_the_cart()
-    assert (
-            len(d.find_elements(By.CLASS_NAME, "cart_item")) == 3
-    ), "---wrong number of elements---"
+    assert (len(d.find_elements(By.CLASS_NAME, "cart_item")) == 3), "---wrong number of elements---"
     # assert ("Sauce Labs Backpack" and "Sauce Labs Bike Light" and "Sauce Labs Onesie"
     #         in d.find_element(By.CLASS_NAME, "cart_list").text
     # )
