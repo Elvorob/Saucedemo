@@ -11,4 +11,6 @@ class CheckoutPage(BasePage):
 
     def back_home(self):
         self.d.find_element(*CheckoutPageLocators.BACK_T_PROD).click()
-        assert (self.d.current_url == "https://www.saucedemo.com/inventory.html"), "Page Not Found!!!"
+        assert (
+            self.d.current_url == "https://www.saucedemo.com/inventory.html"
+        ), "Page Not Found!!!"

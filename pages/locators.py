@@ -181,7 +181,7 @@ class CartPageLocators:
     BT_CHECKOUT = (By.ID, "checkout")
     CONTINUE_SHOPPING = (By.ID, "continue-shopping")
     CART_QUANTITY = (By.ID, "//div[@class='cart_quantity']")
-    INVEN_ITEM_NAME = (By.CLASS_NAME, 'inventory_item_name')
+    INVEN_ITEM_NAME = (By.CLASS_NAME, "inventory_item_name")
 
 
 class CheckoutPageLocators:

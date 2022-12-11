@@ -18,7 +18,10 @@ class InventoryPage(BasePage):
         self.d.find_element(*InventoryPageLocators.BACKPACK_ADD_BTN).click()
         self.d.find_element(*InventoryPageLocators.CART_BTN).click()
         assert "cart" in self.d.current_url
-        assert ("Sauce Labs Backpack" in self.d.find_element(*InventoryPageLocators.BACKPACK_LABEL).text)
+        assert (
+            "Sauce Labs Backpack"
+            in self.d.find_element(*InventoryPageLocators.BACKPACK_LABEL).text
+        )
 
     def change_quantity_in_cart(self):
         self.add_to_cart_backpack_inventory()
