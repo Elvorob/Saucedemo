@@ -110,7 +110,11 @@ def pytest_runtest_makereport(item, call):
 
 
 @pytest.fixture(
-    params=["standard_user", "problem_user", "performance_glitch_user"],
+    params=[
+        "standard_user",
+        pytest.param("problem_user", marks=pytest.mark.xfail),
+        "performance_glitch_user",
+    ],
     scope="function",
 )
 def login_from_list(d, request):
