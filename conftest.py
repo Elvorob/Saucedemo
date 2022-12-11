@@ -5,7 +5,7 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.core.utils import ChromeType
-from .pages.locators import *
+from .pages.locators import LoginPageLocators
 
 
 """
@@ -29,7 +29,7 @@ def d(browser):
         )
     else:
         o = webdriver.ChromeOptions()
-        o.headless = headless
+        o.headless = False
         driver = webdriver.Chrome(
             service=ChromeService(ChromeDriverManager().install()), options=o
         )

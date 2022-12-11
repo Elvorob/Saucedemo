@@ -1,5 +1,5 @@
 from selenium.common.exceptions import NoSuchElementException
-from .locators import *
+from .locators import InventoryPageLocators, Widgets
 
 
 class BasePage:

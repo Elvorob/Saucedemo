@@ -1,5 +1,5 @@
 import pytest
-from ..pages.inventory_page import *
+from ..pages.inventory_page import InventoryPage
 
 link_inv = "https://www.saucedemo.com/inventory.html"
 

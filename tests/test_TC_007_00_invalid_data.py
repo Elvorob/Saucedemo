@@ -1,8 +1,10 @@
 import pytest
-from ..pages.inventory_page import *
-from ..pages.cart_page import *
-from ..pages.checkout_page import *
+from selenium.webdriver.common.by import By
 
+from pages.locators import CartPageLocators
+from ..pages.inventory_page import InventoryPage
+from ..pages.cart_page import CartPage
+from ..pages.checkout_page import CheckoutPage
 
 link_inv = "https://www.saucedemo.com/inventory.html"
 link_Cart = "https://www.saucedemo.com/cart.html"
@@ -30,7 +32,7 @@ def test_negativ_checkout_data(d, login_from_list, firstname, lastname, zip):
     d.implicitly_wait(2)
     page.go_to_the_cart()
     assert (
-        len(d.find_elements(By.CLASS_NAME, "cart_item")) == 3
+            len(d.find_elements(By.CLASS_NAME, "cart_item")) == 3
     ), "---wrong number of elements---"
     # assert ("Sauce Labs Backpack" and "Sauce Labs Bike Light" and "Sauce Labs Onesie"
     #         in d.find_element(By.CLASS_NAME, "cart_list").text
