@@ -1,8 +1,10 @@
 import pytest
-from ..pages.inventory_page import *
-from ..pages.cart_page import *
-from ..pages.checkout_page import *
+from selenium.webdriver.common.by import By
 
+from ..pages.locators import CartPageLocators
+from ..pages.inventory_page import InventoryPage
+from ..pages.cart_page import CartPage
+from ..pages.checkout_page import CheckoutPage
 
 link_inv = "https://www.saucedemo.com/inventory.html"
 link_Cart = "https://www.saucedemo.com/cart.html"

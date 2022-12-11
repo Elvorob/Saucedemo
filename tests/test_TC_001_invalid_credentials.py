@@ -1,5 +1,7 @@
 import pytest
-from ..pages.login_page import *
+from selenium.webdriver.common.by import By
+
+from ..pages.login_page import LoginPage
 
 link_Main = "https://www.saucedemo.com/"
 

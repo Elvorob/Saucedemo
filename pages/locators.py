@@ -141,6 +141,7 @@ class LoginPageLocators:
 
 
 class InventoryItemPageLocator:
+    LINK_INVENT = "https://www.saucedemo.com/inventory.html"
     BACK_TO_PRODUCKS_BTN = (By.ID, "back-to-products")
     # ADD_BTN и REMOVE_BTN локаторы в карточке продукта СОВПАДАЮ! c локаторами на InventoryPageLocators
     # для каждого продукта свой набор локаторов
@@ -181,7 +182,10 @@ class CartPageLocators:
     BT_CHECKOUT = (By.ID, "checkout")
     CONTINUE_SHOPPING = (By.ID, "continue-shopping")
     CART_QUANTITY = (By.ID, "//div[@class='cart_quantity']")
-    INVEN_ITEM_NAME = (By.CLASS_NAME, "inventory_item_name")
+    INVENT_ITEM_NAME = (By.CLASS_NAME, "inventory_item_name")
+    INVENT_ITEM_PRICE = (By.CLASS_NAME, "inventory_item_price")
+    INVENT_ITEM_DESC = (By.CLASS_NAME, "inventory_item_desc")
+    LINK_CART = "https://www.saucedemo.com/cart.html"
 
 
 class CheckoutPageLocators:
