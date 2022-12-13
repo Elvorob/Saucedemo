@@ -6,6 +6,8 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.common.keys import Keys
 
 
+"""TC 002.02.00 -> Get in product card in new window """
+
 @pytest.mark.parametrize(
     "username, password",
     [
@@ -23,13 +25,14 @@ def test_product_cart_new_window(d, username, password):
     page.signin_4_username(username, password)
     page.should_go_on_product_page()
     d.maximize_window()
+    """Use a modul ActionChains for making a Right click """
     achains = ActionChains(d)
-    # choose an item
+    """Choose an item"""
     backpack = d.find_element(*InventoryPageLocators.BACKPACK_LINK).click()
-    # right click
+    """Make a right click"""
     achains.context_click(backpack).perform()
     d.implicitly_wait(1)
-    # choose "open in new window"
+    """In pop-up menu choose open in new window - the second one"""
     achains.context_click(backpack).send_keys(Keys.ARROW_DOWN).send_keys(
         Keys.RETURN
     ).perform()

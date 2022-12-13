@@ -1,10 +1,10 @@
-import time
 import pytest
 from ..pages.locators import InventoryPageLocators
 from ..pages.locators import link
 from ..pages.login_page import LoginPage
 
 
+"""TC 005.03.00 -> All users make logout"""
 @pytest.mark.parametrize(
     "username,password",
     [
@@ -17,10 +17,10 @@ def test_logout(d, username, password):
     page = LoginPage(d, link)
     page.should_be_login_form()
     page.signin_4_username(username, password)
-    time.sleep(1)
+    d.implicitly_wait(20)
     page.should_go_on_product_page()
 
     d.find_element(*InventoryPageLocators.BURGER_BTN).click()
-    time.sleep(2)
+    d.implicitly_wait(20)
     d.find_element(*InventoryPageLocators.BURGER_MENU_LOGOUT_BTN).click()
     assert d.current_url == link
