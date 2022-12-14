@@ -1,7 +1,9 @@
-import time
 from ..pages.locators import InventoryPageLocators
 from ..pages.locators import link
 from ..pages.login_page import LoginPage
+
+
+"""TC 005.00.01 -> About page for standard user"""
 
 
 def test_about_page_standard_user(d):
@@ -11,6 +13,6 @@ def test_about_page_standard_user(d):
     page.should_go_on_product_page()
 
     d.find_element(*InventoryPageLocators.BURGER_BTN).click()
-    time.sleep(2)
+    d.implicitly_wait(2)
     d.find_element(*InventoryPageLocators.BURGER_MENU_ABOUT_BTN).click()
     assert d.current_url == "https://saucelabs.com/"

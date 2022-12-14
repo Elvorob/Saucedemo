@@ -5,7 +5,7 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.core.utils import ChromeType
-from .pages.locators import *
+from .pages.locators import LoginPageLocators
 
 
 """
@@ -74,14 +74,17 @@ def g(d):
 -----------------------------------------------------
 """
 
+
 def pytest_html_report_title(report):
     report.title = "Saucedemo - Let's do it!"
+
 
 """
 -----------------------------------------------------
 ---------- Add screenshots to report html -----------
 -----------------------------------------------------
 """
+
 
 @pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_makereport(item, call):
@@ -95,8 +98,9 @@ def pytest_runtest_makereport(item, call):
         if (report.skipped and xfail) or (report.failed and not xfail):
             # test_name = os.environ.get('PYTEST_CURRENT_TEST').split(':')[-1].split(' ')[0]
             screenshot = driver.get_screenshot_as_base64()
-            extra.append(pytest_html.extras.image(screenshot, ''))
+            extra.append(pytest_html.extras.image(screenshot, ""))
         report.extra = extra
+
 
 """
 -----------------------------------------------------
@@ -106,7 +110,11 @@ def pytest_runtest_makereport(item, call):
 
 
 @pytest.fixture(
-    params=["standard_user", "problem_user", "performance_glitch_user"],
+    params=[
+        "standard_user",
+        pytest.param("problem_user", marks=pytest.mark.xfail),
+        "performance_glitch_user",
+    ],
     scope="function",
 )
 def login_from_list(d, request):

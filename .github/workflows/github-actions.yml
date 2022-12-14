@@ -67,11 +67,11 @@ jobs:
         run: |
           source .venv/bin/activate
           pytest tests/ --junitxml report.xml
-      - name: Create test summary
-        uses: test-summary/action@v2.0
-        with:
-          paths: report.xml
-        if: always()
+#      - name: Create test summary
+#        uses: test-summary/action@v2.0
+#        with:
+#          paths: report.xml
+#        if: always()
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()
