@@ -6,8 +6,7 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.common.keys import Keys
 
 
-"""TC 002.02.00 -> Get in product card in new window """
-
+"""TC 002.02.00 -> Get a product card in new window """
 @pytest.mark.parametrize(
     "username, password",
     [
@@ -31,7 +30,7 @@ def test_product_cart_new_window(d, username, password):
     backpack = d.find_element(*InventoryPageLocators.BACKPACK_LINK).click()
     """Make a right click"""
     achains.context_click(backpack).perform()
-    d.implicitly_wait(1)
+    d.implicitly_wait(2)
     """In pop-up menu choose open in new window - the second one"""
     achains.context_click(backpack).send_keys(Keys.ARROW_DOWN).send_keys(
         Keys.RETURN

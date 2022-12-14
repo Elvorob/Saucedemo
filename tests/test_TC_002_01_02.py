@@ -6,7 +6,7 @@ from ..pages.locators import link
 def test_sort_items_az_za_lowhigh_highlow(d):
     page = LoginPage(d, link)
     page.open_page()
-    d.implicitly_wait(30)
+    d.implicitly_wait(10)
     page.signin_4_username("standard_user", "secret_sauce")
     page.should_go_on_product_page()
     page = InventoryPage(d, link)
