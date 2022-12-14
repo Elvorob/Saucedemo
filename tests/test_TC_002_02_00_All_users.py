@@ -8,6 +8,7 @@ from selenium.webdriver.common.keys import Keys
 
 """TC 002.02.00 -> Get in product card in new window """
 
+
 @pytest.mark.parametrize(
     "username, password",
     [

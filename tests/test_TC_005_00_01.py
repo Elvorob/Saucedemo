@@ -4,6 +4,8 @@ from ..pages.login_page import LoginPage
 
 
 """TC 005.00.01 -> About page for standard user"""
+
+
 def test_about_page_standard_user(d):
     page = LoginPage(d, link)
     page.should_be_login_form()

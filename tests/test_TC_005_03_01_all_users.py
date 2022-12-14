@@ -5,6 +5,8 @@ from ..pages.login_page import LoginPage
 
 
 """TC 005.03.00 -> All users make logout"""
+
+
 @pytest.mark.parametrize(
     "username,password",
     [
